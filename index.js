@@ -10,8 +10,10 @@
 
 var PORT = 8080;
 var JITTER_TIME = 800;
+var BOOT_TIME = 1000;
 var SOCKET = '/Users/vlc/vlc.sock';
 var REBOOT_SOUND = 'winxp.mp3';
+var TIME_REGEX = /\d+\s*$/;
 
 var express = require('express');
 var exec = require('child_process').exec;
@@ -22,10 +24,10 @@ app.use(express.static('www'));
 
 app.post('/crash', function(req, res) {
   // This will "crash" the a/v and lighting
-  console.log('crashing now');
   tell_vlc('get_time').then(function(out) {
+    var crash_time = out.match(TIME_REGEX);
     crash_timer = setInterval(function() {
-      tell_vlc('seek ' + out);
+      tell_vlc('seek ' + crash_time);
     }, JITTER_TIME);
     res.send('crashed');
   });
@@ -37,9 +39,11 @@ app.post('/reboot', function(req, res) {
   tell_vlc('pause').then(function(out) {
     crash_timer && clearInterval(crash_timer);
     crash_timer = null;
-    syscall('afplay ' + __dirname + '/' + REBOOT_SOUND)
-        .then(tell_vlc.bind(null, 'pause'))
-        .then(res.send.bind(res, 'rebooted'));
+    setTimeout(function() {
+      syscall('afplay ' + __dirname + '/' + REBOOT_SOUND)
+          .then(tell_vlc.bind(null, 'pause'))
+          .then(res.send.bind(res, 'rebooted'));
+    }, BOOT_TIME);
   });
 });
 
