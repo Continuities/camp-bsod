@@ -2,8 +2,72 @@
 <html>
     <head>
         <title>BSOD Test</title>
+        <style>
+            @font-face {
+                font-family: 'bsod';
+                src: url('bsod.ttf') format('truetype');
+            }
+
+            html, body {
+                height: 100%;
+            }
+
+            body {
+                display: flex;
+                background-color: #0414A7;
+                color: white;
+                font-family: bsod;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .btn {
+                background: #A8A9A3;
+                color: #0414A7;
+                cursor: pointer;
+                padding: 5px 10px;
+                font-size: 25px;
+            }
+
+            body.working,
+            body.working .btn{
+                cursor: wait;
+            }
+        </style>
+        <script>
+            var _locked = false;
+
+            function send(instruction) {
+                if (_locked) { return; }
+                _locked = true;
+                document.body.className = 'working';
+                var xhr = new XMLHttpRequest();
+                xhr.addEventListener("load", function() {
+                    document.body.className = '';
+                    _locked = false;
+                    toggle_button();
+                });
+                xhr.open('POST', '/' + instruction);
+                xhr.send();
+            }
+
+            function toggle_button() {
+                var crash = document.querySelector('.crash-btn')
+                ,   reboot = document.querySelector('.reboot-btn')
+                ;
+
+                if (crash.style.display === 'none') {
+                    reboot.style.display = 'none';
+                    crash.style.display = 'block';
+                } else {
+                    reboot.style.display = 'block';
+                    crash.style.display = 'none';
+                }
+            }
+        </script>
     </head>
     <body>
-        TODO
+        <div class="crash-btn btn" onclick="send('crash');">CRASH</div>
+        <div class="reboot-btn btn" style="display:none;" onclick="send('reboot');">REBOOT</div>
     </body>
 </html>

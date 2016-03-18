@@ -24,25 +24,29 @@ app.use(express.static('www'));
 
 app.post('/crash', function(req, res) {
   // This will "crash" the a/v and lighting
+  console.info('crash');
   tell_vlc('get_time').then(function(out) {
     var crash_time = out.match(TIME_REGEX);
     crash_timer = setInterval(function() {
       tell_vlc('seek ' + crash_time);
     }, JITTER_TIME);
-    res.send('crashed');
+    res.status(200).send('crashed');
   });
 });
 
 app.post('/reboot', function(req, res) {
   // This will "reboot" the a/v and lighting
-  console.log('rebooting');
-  tell_vlc('pause').then(function(out) {
+  console.info('rebooting...');
+  tell_vlc('pause').then(function() {
     crash_timer && clearInterval(crash_timer);
     crash_timer = null;
     setTimeout(function() {
       syscall('afplay ' + __dirname + '/' + REBOOT_SOUND)
           .then(tell_vlc.bind(null, 'pause'))
-          .then(res.send.bind(res, 'rebooted'));
+          .then(function() {
+            console.info('rebooted');
+            res.status(200).send('rebooted');
+          });
     }, BOOT_TIME);
   });
 });
