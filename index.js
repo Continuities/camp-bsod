@@ -25,7 +25,8 @@ app.use(express.static('www'));
 app.post('/crash', function(req, res) {
   // This will "crash" the a/v and lighting
   console.info('crash');
-  tell_vlc('get_time').then(function(out) {
+  // Gotta ask twice, because VLC is sometimes stupid?
+  tell_vlc('get_time').then(tell_vlc.bind(null, 'get_time')).then(function(out) {
     var crash_time = out.match(TIME_REGEX);
     crash_timer = setInterval(function() {
       tell_vlc('seek ' + crash_time);
@@ -62,6 +63,7 @@ function tell_vlc(command) {
 function syscall(command) {
   return new Promise(function(resolve, reject) {
     exec(command, function(err, stdout, stderr) {
+      //console.log(command + ':: ' + stdout);
       resolve(stdout);
     });
   });
