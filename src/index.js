@@ -20,6 +20,10 @@ var sites = [
     domain: /^(clients3\.google\.com)|(connectivitycheck\.gstatic\.com)$/,
     port: 8082,
     handler: require('./connectivity/google.js')
+  }, {
+    domain: /(www\.)?youtube\.com/,
+    port: 8083,
+    handler: require('./youtube/index.js')
   }
 ];
 
@@ -40,7 +44,9 @@ bouncy(function(req, res, bounce) {
   }
 
   console.error('No site for ' + host);
-  res.statusCode = 404;
+  res.statusCode = 200;
   res.end('Unable to route to host');
 
 }).listen(PORT);
+
+console.log('Dispatch running on port ' + PORT);

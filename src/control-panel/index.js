@@ -15,8 +15,8 @@ var REBOOT_SOUND = 'winxp.mp3';
 var TIME_REGEX = /\d+\s*$/;
 
 var express = require('express');
-var exec = require('child_process').exec;
 var app = express();
+var exec = require('child_process').exec;
 var crash_timer;
 
 function tell_vlc(command) {
