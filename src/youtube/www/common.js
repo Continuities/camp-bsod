@@ -4,18 +4,19 @@
 
   var header = document.querySelector('header h1')
   ,   search = document.querySelector('header .search-box')
+  ,   bodyClass = document.body.className
   ;
 
 
   function searchClick() {
-    document.body.className = 'search-open';
+    document.body.className = bodyClass + ' search-open';
     header.style.display = 'none';
     search.style.display = 'block';
     search.focus();
   }
 
   function searchClose() {
-    document.body.className = '';
+    document.body.className = bodyClass;
     header.style.display = 'block';
     search.style.display = 'none';
   }

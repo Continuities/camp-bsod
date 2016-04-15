@@ -22,6 +22,35 @@ h1 {
     text-overflow: ellipsis;
 }
 
+.dark header {
+    background-color: #333;
+}
+
+#video {
+    width: 100%;
+}
+.player {
+    position: relative;
+}
+.player.paused::after {
+    position: absolute;
+    display: block;
+    content: '';
+    background: no-repeat url(sprites2.png) 0px -204px;
+    background-size: 88px 493px;
+    -moz-background-size: 88px 493px;
+    -webkit-background-size: 88px 493px;
+    width: 84px;
+    height: 59px;
+    top: 50%;
+    left: 50%;
+    margin-left: -42px;
+    margin-top: -29.5px;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
 body.search-open:after {
     display: block;
     position: absolute;
@@ -93,6 +122,7 @@ body.search-open .sprite.menu {
 .video {
     display: flex;
     padding: 8px 0;
+    text-decoration: none;
 }
 
 .thumbnail {
@@ -131,6 +161,62 @@ body.search-open .sprite.menu {
     background: #f8f8f8 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAYAAACzzX7wAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAApSURBVAgdY/j//z9DaGjof1yYAaQABLApAMvBFKArAoljKIApgkmCaAAtOD3DvNzNYQAAAABJRU5ErkJggg==);
     background-repeat: no-repeat;
     background-position: right 10px center;
+}
+
+.videoInfo {
+    position: relative;
+    padding: 16px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.videoInfo::after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 18px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #555;
+}
+
+.videoInfo .title {
+    font-size: 18px;
+    color: #222;
+    font-weight: normal;
+    margin: 0 14px 6px 0;
+    line-height: 1.25;
+}
+
+.videoInfo .author {
+    font-size: 14px;
+    line-height: 18px;
+    color: #222;
+}
+
+.videoInfo .viewCount {
+    color: #767676;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.videoInfo .viewCount::before {
+    content: "\0000b7";
+    margin: 0 5px;
+}
+
+.videoInfo .buttons {
+    height: 28px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.buttons .number {
+    font-size: 12px;
+    color: #767676;
+    margin: 0 10px 0 6px;
 }
 
 .sprite {
@@ -186,4 +272,37 @@ body.search-open .sprite.menu {
     min-width: 4px;
     height: 16px;
     margin-left: auto;
+}
+.sprite.thumbs-up {
+    background-position: 0px -1345px;
+    width: 18px;
+    height: 18px;
+}
+.sprite.thumbs-down {
+    background-position: -22px -405px;
+    width: 18px;
+    height: 18px;
+}
+.sprite.plus {
+    background-position: -22px -1345px;
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+}
+.sprite.arrow {
+    background-position: 0px -628px;
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+}
+.sprite.flag {
+    background-position: -16px -900px;
+    width: 18px;
+    height: 18px;
+    margin-left: 20px;
+}
+.sprite.play {
+    background-position: 0px -204px;
+    width: 84px;
+    height: 59px;
 }

@@ -9,7 +9,7 @@
 'use strict';
 
 var bouncy = require('bouncy');
-var PORT = 80;
+var PORT = 8080;
 
 var sites = [
   {

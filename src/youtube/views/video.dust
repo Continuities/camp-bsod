@@ -1,0 +1,34 @@
+{>"base" /}
+{<bodyClass}dark{/bodyClass}
+{<pageTitle}{title}{/pageTitle}
+{<content}
+    <section class="player paused">
+        <video id="video" src="video.mp4" autoplay="true"></video>
+    </section>
+    <section class="videoInfo">
+        <div class="title">{title}</div>
+        <span class="author">RickRollFly</span>
+        <span class="viewCount">1,328,675,309 views</span>
+        <div class="buttons">
+            <span class="sprite thumbs-up"></span>
+            <span class="number">129K</span>
+            <span class="sprite thumbs-down"></span>
+            <span class="number">3</span>
+            <span class="sprite plus"></span>
+            <span class="sprite arrow"></span>
+            <span class="sprite flag"></span>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var video = document.getElementById('video')
+        ,   player = document.querySelector('.player')
+        ;
+
+        video.addEventListener('play', function() {
+           player.className = 'player';
+        });
+        player.addEventListener('click', function() {
+           video.play();
+        });
+    </script>
+{/content}

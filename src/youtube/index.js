@@ -89,6 +89,12 @@ function init(port) {
     });
   });
 
+  app.get('/video', function(req, res) {
+    res.render('video', {
+      title: req.query.t
+    });
+  });
+
   app.listen(port, function () {
     console.log('YouTube running on port ' + port);
   });
