@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densityDpi=medium-dpi">
+        <meta name="theme-color" content="#e62117" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <title>{+pageTitle}YouTube{/pageTitle}</title>
+        <style name="www-roboto">
+            @font-face {
+                font-family:'Roboto';
+                font-style:normal;
+                font-weight:500;
+                src:url(roboto/Roboto-Medium.ttf) format('truetype');
+            }@font-face {
+                font-family:'Roboto';
+                font-style:normal;
+                font-weight:400;
+                src:url(roboto/Roboto-Regular.ttf)format('truetype');
+            }@font-face {
+                font-family:'Roboto';
+                font-style:italic;
+                font-weight:400;
+                src:url(roboto/Roboto-Italic.ttf)format('truetype');
+            }@font-face{
+                font-family:'Roboto';
+                font-style:italic;
+                font-weight:500;
+                src:url(roboto/Roboto-MediumItalic.ttf)format('truetype');
+            }
+        </style>
+        <link rel="stylesheet" href="common.css" />
+    </head>
+    <body>
+        <header>
+            <span a href="/" class="sprite logo"></span>
+            <h1>{+header /}</h1>
+            <a href="#" class="sprite search"></a>
+            <a href="#" class="sprite menu"></a>
+        </header>
+        {+content /}
+    </body>
+</html>

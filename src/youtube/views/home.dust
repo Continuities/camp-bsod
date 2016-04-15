@@ -1,0 +1,21 @@
+{>"base" /}
+{<pageTitle}Home - YouTube{/pageTitle}
+{<header}Home{/header}
+{<content}
+    <ul class="nav">
+        <li><a href="#" class="sprite home"></a></li>
+        <li><a href="#" class="sprite trending"></a></li>
+        <li><a href="#" class="sprite history"></a></li>
+        <li><a href="#" class="sprite account"></a></li>
+    </ul>
+    <section class="group">
+        <div class="title">
+            <img class="title-logo" src="rule2logo.png"/>
+            Rule2 Productions
+            <span class="sprite menu-dark"></span>
+        </div>
+        {#videos}
+            {>"video-row" video=. /}
+        {/videos}
+    </section>
+{/content}

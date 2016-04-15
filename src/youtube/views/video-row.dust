@@ -1,0 +1,9 @@
+<div class="video">
+    <img class="thumbnail" src="{thumbnail}" />
+    <div class="info">
+        <div class="video-title">{title}</div>
+        <div class="video-author">{author}</div>
+        <div class="video-views">{viewCount} views</div>
+    </div>
+    <span class="sprite menu-dark"></span>
+</div>

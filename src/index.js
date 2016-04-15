@@ -21,8 +21,12 @@ var sites = [
     port: 8082,
     handler: require('./connectivity/google.js')
   }, {
-    domain: /(www\.)?youtube\.com/,
+    domain: /^captive.apple.com/,
     port: 8083,
+    handler: require('./connectivity/apple.js')
+  }, {
+    domain: /(www\.)?youtube/,
+    port: 8084,
     handler: require('./youtube/index.js')
   }
 ];
@@ -32,6 +36,9 @@ sites.forEach(function(site){
 });
 
 bouncy(function(req, res, bounce) {
+
+  console.log('incoming: ' + req.host + req.path);
+
   var host = req.headers.host;
   var site = sites.reduce(function(value, s) {
     return value || (s.domain.test(host) && s);
@@ -43,7 +50,7 @@ bouncy(function(req, res, bounce) {
     return;
   }
 
-  console.error('No site for ' + host);
+  console.error('No routing');
   res.statusCode = 200;
   res.end('Unable to route to host');
 

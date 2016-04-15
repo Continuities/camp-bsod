@@ -1,0 +1,13 @@
+{>"base" /}
+{<header}{query}{/header}
+{<content}
+    <div class="filters">
+        <span class="filter">All</span>
+        <span class="filter">Anytime</span>
+    </div>
+    <section class="group">
+        {#videos}
+            {>"video-row" video=. /}
+        {/videos}
+    </section>
+{/content}
