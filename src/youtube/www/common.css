@@ -22,6 +22,42 @@ h1 {
     text-overflow: ellipsis;
 }
 
+body.search-open:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    content: '';
+    opacity: 0.85;
+}
+
+body.search-open header {
+    position: relative;
+    z-index: 1;
+}
+
+body.search-open .sprite.menu {
+    display: none;
+}
+
+.search-box {
+    font-size: 15px;
+    line-height: 26px;
+    margin: 0 8px 0 0;
+    outline-width: 0;
+    border: 0;
+    padding: 2px 0 0 5px;
+    flex-grow: 2;
+    background: white;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .nav {
     list-style: none;
     height: 56px;
@@ -111,15 +147,16 @@ h1 {
     margin: 0 8px 0 12px;
 }
 .sprite.menu {
-    margin: 0 4px 0 12px;
+    margin: 0 4px 0 6px;
     background-position: 0px -483px;
     width: 24px;
     height: 24px;
 }
 .sprite.search {
-    margin-left: auto;
+    margin: 0 6px 0 auto;
     background-position: 0px -1571px;
     width: 24px;
+    min-width: 24px;
     height: 24px;
 }
 .sprite.home {

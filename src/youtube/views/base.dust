@@ -29,11 +29,13 @@
             }
         </style>
         <link rel="stylesheet" href="common.css" />
+        <script src="common.js" defer></script>
     </head>
     <body>
         <header>
             <span a href="/" class="sprite logo"></span>
             <h1>{+header /}</h1>
+            <input type="search" placeholder="Search YouTube" class="search-box" style="display:none;" />
             <a href="#" class="sprite search"></a>
             <a href="#" class="sprite menu"></a>
         </header>
