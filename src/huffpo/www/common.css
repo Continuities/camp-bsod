@@ -153,3 +153,8 @@ header.hide {
     height: 120px;
     flex: 0 0 auto;
 }
+
+#the-post {
+    width: 200%;
+    margin: -10px 0 0 -50%;
+}
