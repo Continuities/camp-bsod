@@ -1,0 +1,16 @@
+{>"base" /}
+{<content}
+    {!<section class="splash">!}
+        {!<h1>{splash}</h1>!}
+        {!<img src="{splashImage}" />!}
+    {!</section>!}
+    <img id="the-post" src="post.png" width="100%" />
+    {!<section class="articles">!}
+        {!{#articles}!}
+            {!<a class="article" href="#">!}
+                {!<h2 class="article-title">{title}</h2>!}
+                {!<img class="article-image" src="{image}" />!}
+            {!</a>!}
+        {!{/articles}!}
+    {!</section>!}
+{/content}

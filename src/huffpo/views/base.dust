@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{+pageTitle}Huffington Post{/pageTitle}</title>
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0" name="viewport">
+        <meta content="true" name="HandheldFriendly">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="common.css" />
+        <script type="text/javascript" defer="true" src="common.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="world"></div>
+            <div class="title"><img src="header.svg" /></div>
+            <div class="burger"></div>
+        </header>
+        <div class="content">
+            {+content /}
+        </div>
+    </body>
+</html>

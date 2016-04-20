@@ -25,9 +25,13 @@ var sites = [
     port: 8083,
     handler: require('./connectivity/apple.js')
   }, {
-    domain: /(www\.)?youtube/,
+    domain: /(www\.)?youtube\./,
     port: 8084,
     handler: require('./youtube/index.js')
+  }, {
+    domain: /(www\.)?huffingtonpost\./,
+    port: 8085,
+    handler: require('./huffpo/index.js')
   }
 ];
 
