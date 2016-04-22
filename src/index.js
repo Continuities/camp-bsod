@@ -9,14 +9,14 @@
 'use strict';
 
 var http = require('http');
-var bouncy = require('bouncy');
+var httpProxy = require('http-proxy');
 var PORT = 80;
 
 var signin = {
   handler: require('./sign-in/index.js'),
   port: 9000,
   domain: 'signin'
-}
+};
 
 var sites = [
   {
@@ -51,39 +51,27 @@ sites.forEach(function(site){
   site.handler.init(site.port);
 });
 
-var server = http.createServer();
-
-bouncy(server, (req, res, bounce) => {
-  console.log('===' + req.headers.host + '===');
+var proxy = httpProxy.createProxyServer({ xfwd: true });
+var server = http.createServer((req, res) => {
   if (req.headers.host !== signin.domain && !signin.handler.permitted(req)) {
     console.log('redirecting to sign-in');
     res.writeHead(302, { 'Location': 'http://' + signin.domain });
     res.end();
-    // Aaaaah, bouncy hack!
-    req.connection._bouncyStream._handled = false;
     return;
   }
-
-  console.log('incoming: ' + req.headers.host + req.url);
 
   var host = req.headers.host;
   var site = sites.reduce((value, s) => value || (s.domain.test(host) && s), false);
 
   if (site) {
     console.log('Routing to port ' + site.port);
-    bounce({
-      port: site.port,
-      headers: {
-        'x-forwarded-for': req.connection.remoteAddress
-      }
-    });
+    proxy.web(req, res, { target: 'http://127.0.0.1:' + site.port });
     return;
   }
 
   console.error('No routing');
   res.statusCode = 200;
   res.end('Unable to route to host');
-
 });
 
 server.listen(PORT);
