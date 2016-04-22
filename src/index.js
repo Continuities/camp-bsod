@@ -8,15 +8,12 @@
 
 'use strict';
 
+var PORT = 80;
+var SIGNIN_DOMAIN = 'signin';
+
 var http = require('http');
 var httpProxy = require('http-proxy');
-var PORT = 80;
-
-var signin = {
-  handler: require('./sign-in/index.js'),
-  port: 9000,
-  domain: 'signin'
-};
+var signin = require('./sign-in/index.js');
 
 var sites = [
   {
@@ -40,22 +37,21 @@ var sites = [
     port: 8085,
     handler: require('./huffpo/index.js')
   }, {
-    domain: /^signin$/,
+    domain: new RegExp('^' + SIGNIN_DOMAIN + '$'),
     port: 8086,
-    handler: signin.handler
+    handler: signin
   }
 ];
 
-signin.handler.init(signin.port);
 sites.forEach(function(site){
   site.handler.init(site.port);
 });
 
 var proxy = httpProxy.createProxyServer({ xfwd: true });
 var server = http.createServer((req, res) => {
-  if (req.headers.host !== signin.domain && !signin.handler.permitted(req)) {
+  if (req.headers.host !== SIGNIN_DOMAIN && !signin.permitted(req)) {
     console.log('redirecting to sign-in');
-    res.writeHead(302, { 'Location': 'http://' + signin.domain });
+    res.writeHead(302, { 'Location': 'http://' + SIGNIN_DOMAIN });
     res.end();
     return;
   }
