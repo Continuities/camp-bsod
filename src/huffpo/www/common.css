@@ -83,7 +83,9 @@ header.hide {
 }
 
 .content {
-    margin-top: 60px;
+    margin-top: 50px;
+    overflow: hidden;
+    width: 100%;
 }
 
 .splash {
