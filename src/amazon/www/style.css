@@ -154,6 +154,39 @@ h1 {
     line-height: 25px;
 }
 
+footer {
+    background: #232f3e;
+    color: white;
+    padding-bottom: 35px;
+}
+
+.top-link {
+    position: relative;
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding-top: 20px;
+    font: 12px/30px Arial;
+    font-weight: 400;
+    background: #37475a;
+}
+
+.top-link::before {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -2.5px;
+    content: '';
+    border: 5px solid transparent;
+    border-top-width: 0;
+    border-bottom: 5px solid #ccc;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
 .sprite {
     background: url(sprites.png) no-repeat;
     background-size: 225px;

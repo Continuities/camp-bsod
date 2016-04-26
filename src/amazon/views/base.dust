@@ -14,4 +14,8 @@
         </header>
         {+content /}
     </body>
+    <footer>
+        <a href="#top" class="top-link">TOP OF PAGE</a>
+        I'M A FOOTER!
+    </footer>
 </html>
