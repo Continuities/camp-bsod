@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{+pageTitle}Scamzone.com{/pageTitle}</title>
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <img src="logo.png" class="logo" />
+            <div class="sprite account"></div>
+            <div class="sprite cart"></div>
+        </header>
+        {+content /}
+    </body>
+</html>

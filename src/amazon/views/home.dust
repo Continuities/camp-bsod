@@ -1,0 +1,21 @@
+{>"base" /}
+{<content}
+    <nav>
+        <div class="search">
+            <input type="text" placeholder="Search"/>
+            <div class="search-icon">
+                <div class="sprite search"></div>
+            </div>
+        </div>
+        <ul class="shop-by">
+           <li>Department</li>
+            <li>Your Lists</li>
+            <li>Deals</li>
+            <li>Sell</li>
+        </ul>
+    </nav>
+    <div class="card">
+        <h2>Recommendations for you in general</h2>
+        A bunch of junk!
+    </div>
+{/content}

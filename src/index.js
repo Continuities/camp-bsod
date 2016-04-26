@@ -33,13 +33,17 @@ var sites = [
     port: 8084,
     handler: require('./youtube/index.js')
   }, {
-    domain: /^(www\.)?huffingtonpost\./,
+    domain: /^(www\.)?(huffingtonpost|huffpost)\./,
     port: 8085,
     handler: require('./huffpo/index.js')
   }, {
     domain: new RegExp('^' + SIGNIN_DOMAIN + '$'),
     port: 8086,
     handler: signin
+  }, {
+    domain: /^(www\.)?amazon\./,
+    port: 8087,
+    handler: require('./amazon/index.js')
   }
 ];
 
