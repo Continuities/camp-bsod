@@ -1,5 +1,6 @@
 {>"base" /}
 {<content}
+    <!--
     <nav>
         <div class="search">
             <input type="text" placeholder="Search"/>
@@ -14,8 +15,23 @@
             <li>Sell</li>
         </ul>
     </nav>
-    <div class="card">
-        <h2>Recommendations for you in general</h2>
-        A bunch of junk!
-    </div>
+    -->
+    <h1>Recommendations for you</h1>
+    {#products}
+        <div class="product">
+            <img src="{image}" class="product-image" />
+            <div class="product-info">
+                <div class="product-name">{name}</div>
+                <div class="sprite2 star stars-{stars}"></div>
+                <div class="product-price">
+                    {?price}
+                        <span class="dolla">$</span>
+                        {price}
+                    {:else}
+                        FREE
+                    {/price}
+                </div>
+            </div>
+        </div>
+    {/products}
 {/content}
