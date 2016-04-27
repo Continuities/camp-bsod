@@ -187,6 +187,30 @@ footer {
     line-height: 0;
 }
 
+.footer-list {
+    color: #ccc;
+    font-size: 11px;
+    list-style: none;
+    margin: 0 0 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sign-out {
+    color: #fff;
+    font: 16px Arial;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.legal {
+    text-align: center;
+    font-size: 11px;
+    color: #ccc;
+}
+
 .sprite {
     background: url(sprites.png) no-repeat;
     background-size: 225px;
@@ -208,7 +232,6 @@ footer {
     background-position: -73px -239px;
     width: 27px;
     height: 25px;
-    -webkit-filter: invert(100%);
     filter: invert(100%);
 }
 
