@@ -1,0 +1,42 @@
+@font-face {
+    font-family: Futura;
+    src: url("Futura.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: Futura;
+    font-weight: bold;
+    src: url('Future-ExtraBold.otf') format('opentype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: black;
+    color: red;
+    font-family: Futura, sans-serif;
+    text-align: center;
+}
+
+.snaggle {
+    fill: white;
+    height: 50%;
+}
+
+.main {
+    border: 2px solid red;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px;
+    font-size: 15vw;
+    line-height: 1;
+    margin: 10px 0;
+}
+
+.sub {
+    display: block;
+}

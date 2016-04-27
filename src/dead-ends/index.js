@@ -12,7 +12,8 @@ var app = express();
 var cons = require('consolidate');
 
 const PAGES = [
-    'bsod'
+    'bsod',
+    'totenkitten'
 ];
 
 function init(port) {
