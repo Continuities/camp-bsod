@@ -1,0 +1,46 @@
+@font-face {
+    font-family: NeoPrint;
+    src: url("NeoPrintM319.otf") format("opentype");
+}
+
+@font-face {
+    font-family: bsod;
+    src: url('bsod.ttf') format('truetype');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0414A7;
+    color: white;
+    padding-top: 40px;
+}
+
+.background {
+    font-family: bsod, monospace;
+    width: 470px;
+    white-space: nowrap;
+    font-size: 12px;
+    margin-left: -235px;
+    padding-left: 50%;
+    -webkit-filter: blur(0.8px);
+    filter: blur(0.8px);
+    position: absolute;
+}
+
+.message {
+    text-align: center;
+    font-family: NeoPrint, sans-serif;
+    font-size: 5vw;
+    line-height: 1.5;
+    transform: translateY(150%) rotate(-30deg);
+    position: absolute;
+    text-shadow: #0414A7 0px 0px 20px;
+}
+
+.camp {
+    font-size: 6.3vw;
+}

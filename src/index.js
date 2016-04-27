@@ -15,7 +15,12 @@ var http = require('http');
 var httpProxy = require('http-proxy');
 var signin = require('./sign-in/index.js');
 
-var sites = [
+const DEADEND = {
+  port: 9000,
+  handler: require('./dead-ends/index.js')
+};
+
+const SITES = [
   {
     domain: /^api$/,
     port: 8081,
@@ -47,7 +52,9 @@ var sites = [
   }
 ];
 
-sites.forEach(function(site){
+DEADEND.handler.init(DEADEND.port);
+
+SITES.forEach(function(site){
   site.handler.init(site.port);
 });
 
@@ -61,7 +68,7 @@ var server = http.createServer((req, res) => {
   }
 
   var host = req.headers.host;
-  var site = sites.reduce((value, s) => value || (s.domain.test(host) && s), false);
+  var site = SITES.reduce((value, s) => value || (s.domain.test(host) && s), false);
 
   if (site) {
     console.log('Routing to port ' + site.port);
@@ -69,9 +76,8 @@ var server = http.createServer((req, res) => {
     return;
   }
 
-  console.error('No routing');
-  res.statusCode = 200;
-  res.end('Unable to route to host');
+  proxy.web(req, res, { target: 'http://127.0.0.1:' + DEADEND.port });
+  res.end('Routing to dead-end');
 });
 
 server.listen(PORT);
