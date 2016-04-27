@@ -29,8 +29,10 @@
         <br>
         ***  SPCMDCON.SYS - Address FBFE7617 base at FBFE5000, DateStamp 3d6dd67c
     </div>
-    <div class="message">
-        THIS WEBSITE HAS BEEN PWNED BY
-        <div class="camp">CAMP BLUE SCREEN OF DEATH</div>
+    <div class="content">
+        <div class="message">
+            THIS WEBSITE HAS BEEN PWNED BY
+            <div class="camp">CAMP BLUE SCREEN OF DEATH</div>
+        </div>
     </div>
 {/content}

@@ -17,6 +17,7 @@ body {
     background-color: #0414A7;
     color: white;
     padding-top: 40px;
+    overflow: hidden;
 }
 
 .background {
@@ -29,18 +30,31 @@ body {
     -webkit-filter: blur(0.8px);
     filter: blur(0.8px);
     position: absolute;
+    top: 50%;
+    margin-top: -144px;
+}
+
+.content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .message {
     text-align: center;
     font-family: NeoPrint, sans-serif;
-    font-size: 5vw;
+    font-size: 5vmin;
     line-height: 1.5;
-    transform: translateY(150%) rotate(-30deg);
-    position: absolute;
+    transform: rotate(-35deg);
     text-shadow: #0414A7 0px 0px 20px;
+    white-space: nowrap;
 }
 
 .camp {
-    font-size: 6.3vw;
+    font-size: 6.3vmin;
 }
