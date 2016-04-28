@@ -11,6 +11,7 @@ var express = require('express');
 var app = express();
 var cons = require('consolidate');
 
+var NUM_PRODUCTS = 10;
 var PRODUCTS = [
   {
     name: 'Captain Pecker the Party Wrecker 6ft Inflatable Penis',
@@ -64,6 +65,70 @@ var PRODUCTS = [
     name: 'The Totenkitten Manifesto',
     stars: 5,
     image: 'totenkittenmanifesto.png'
+  }, {
+    name: 'Bacon Bandages (with bacon flavor!)',
+    price: '9.99',
+    image: 'baconbandages.png'
+  }, {
+    name: 'runny nose shower gel dispenser',
+    price: '23.99',
+    image: 'showergel.png'
+  }, {
+    image: 'phonethumb.png',
+    name: 'Suction cup thumb iPhone stand!!!',
+    price: '4.99'
+  }, {
+    image: 'condimentgun.png',
+    name: 'Ketchup Mustard Condiment Gun',
+    price: '12.99'
+  }, {
+    image: 'silverhelmet.png',
+    name: 'Silver stardust paintjob shiny motorcycle helmet',
+    price: '49.99'
+  }, {
+    image: 'breakfaststation.png',
+    name: 'Snorton\'s 3-in-1 Breakfast Station 9000',
+    price: '129.99'
+  }, {
+    image: 'keyboardwaffleiron.png',
+    name: 'WAFFLE KEYBOARD MAKER WAFFLE IRON',
+    price: '35.99'
+  }, {
+    image: 'meatgrindergun.png',
+    name: 'Meat Grinder Gun Hamburger Gun Limited Edition',
+    price: '24.99'
+  }, {
+    image: 'picnicpants.png',
+    name: 'DPW Picnic Pants - Picnic blanket on the go',
+    price: '19.99'
+  }, {
+    image: 'flavoredwallpaper.png',
+    name: 'Scratch and sniff, flavored wallpaper: Beef, Banana, Cherry, Cola, Potato Chip',
+    price: '52.29'
+  }, {
+    image: 'analsharingbolt.png',
+    name: 'Friendly Partners Popular Silicon Anal Sharing Bolt',
+    price: '33.95'
+  }, {
+    image: 'helmetbag.png',
+    name: 'Grappa brand Helmet Handbag Earthquake Protection Bag',
+    price: '21.29'
+  }, {
+    image: 'seniorladydecal.png',
+    name: 'Senior Woman With Asthma Inhaler Peel and Stick Wall Decal (48" x 41")',
+    price: '27.98'
+  }, {
+    image: 'boyfriendpillow.png',
+    name: 'Boyfriend Arm Pillow, Blue Shirt',
+    price: '29.95'
+  }, {
+    image: 'coffeebars.png',
+    name: 'Non-GMO, Gluten Free, Coffee Infused Energy Bars - Pack of 12',
+    price: '36.00'
+  }, {
+    image: 'pizzalanyard.png',
+    name: 'Pizza holder slide-lock lanyard',
+    price: '9.99'
   }
 ];
 
@@ -83,6 +148,7 @@ function init(port) {
     var products = PRODUCTS
                     .map(p => Object.assign({ stars: getStars() }, p))
                     .sort(() => (Math.random() * 2) - 1);
+    products.length = NUM_PRODUCTS;
     res.render('home', { products: products });
   });
 
