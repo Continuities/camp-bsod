@@ -12,8 +12,8 @@ var app = express();
 var cons = require('consolidate');
 
 const PAGES = [
-    //'bsod',
-    //'totenkitten',
+    'bsod',
+    'totenkitten',
     'firefly'
 ];
 
