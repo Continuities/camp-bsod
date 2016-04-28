@@ -1,0 +1,10 @@
+{>"base" /}
+{<style}firefly.css{/style}
+{<theme}#0230F7{/theme}
+{<title}Content In Violation {/title}
+{<content}
+    <header></header>
+    <img src="prohibited.png" class="prohibited" />
+    <span>THIS CONTENT HAS BEEN FLAGGED AS INAPPROPRIATE BY</span>
+    <span class="fac">FIREFLY ARTS COLLECTIVE</span>
+{/content}

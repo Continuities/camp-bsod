@@ -6,7 +6,7 @@
 @font-face {
     font-family: Futura;
     font-weight: bold;
-    src: url('Future-ExtraBold.otf') format('opentype');
+    src: url('Futura-ExtraBold.otf') format('opentype');
 }
 
 body, html {
@@ -32,7 +32,7 @@ body {
     font-weight: bold;
     display: inline-block;
     padding: 5px;
-    font-size: 15vw;
+    font-size: 13vw;
     line-height: 1;
     margin: 10px 0;
 }
