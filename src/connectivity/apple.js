@@ -11,11 +11,11 @@ var express = require('express');
 var app = express();
 
 function init(port) {
-  app.get('/*', function(req, res) {
+  app.get('/*', (req, res) => {
     res.status(200).send('<HTML><HEAD><TITLE>Success</TITLE></HEAD><BODY>Success</BODY></HTML>');
   });
 
-  app.listen(port, function () {
+  app.listen(port, () => {
     console.log('iOS Connectivity Spoofer running on port ' + port);
   });
 }

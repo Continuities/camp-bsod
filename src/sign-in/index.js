@@ -30,7 +30,7 @@ function init(port) {
     console.log('Sign-in running on port ' + port);
   });
 
-  app.get('/accept', function(req, res) {
+  app.get('/accept', (req, res) => {
     console.log(req.headers);
     console.log('logging in ' + getIp(req));
     permittedAddresses.add(getIp(req));

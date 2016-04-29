@@ -11,11 +11,11 @@ var express = require('express');
 var app = express();
 
 function init(port) {
-  app.get('/*', function(req, res) {
+  app.get('/*', (req, res) => {
     res.status(204).send();
   });
 
-  app.listen(port, function () {
+  app.listen(port, () => {
     console.log('Android Connectivity Spoofer running on port ' + port);
   });
 }

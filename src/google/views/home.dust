@@ -1,0 +1,37 @@
+{>"base" /}
+{<content}
+    <div class="page">
+        <header>
+            <a class="header-link active" href="#">ALL</a>
+            <a class="header-link left" href="#">IMAGES</a>
+            <a class="sprite apps rights" href="#"></a>
+            <a class="sprite notifications" href="#"></a>
+            <a class="profile" href="#"></a>
+        </header>
+        <section class="content">
+            <div class="logo">
+                <img src="google.png" class="logo-img">
+            </div>
+            <div class="main">
+                <form class="search-form">
+                    <input type="text" class="search-box">
+                </form>
+            </div>
+        </section>
+        <div class="location">
+            <span class="dot"></span>The Woods
+        </div>
+    </div>
+    <footer>
+        <ul class="footer-links">
+            <li>Settings</li>
+            <li>Privacy</li>
+            <li>Terms</li>
+        </ul>
+        <ul class="footer-links">
+            <li>Advertising</li>
+            <li>Business</li>
+            <li>About</li>
+        </ul>
+    </footer>
+{/content}

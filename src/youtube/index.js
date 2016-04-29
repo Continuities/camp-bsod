@@ -72,13 +72,13 @@ function init(port) {
   app.set('views', __dirname + '/views');
   app.use(express.static(__dirname + '/www'));
 
-  app.get('/', function(req, res) {
+  app.get('/', (req, res) => {
     res.render('home', {
       videos: HOME_VIDEOS
     });
   });
 
-  app.get('/search', function(req, res) {
+  app.get('/search', (req, res) => {
     res.render('search', {
       query: req.query.q,
       videos: SEARCH_VIDEOS.map(v => {
@@ -89,13 +89,13 @@ function init(port) {
     });
   });
 
-  app.get('/video', function(req, res) {
+  app.get('/video', (req, res) => {
     res.render('video', {
       title: req.query.t
     });
   });
 
-  app.listen(port, function () {
+  app.listen(port, () => {
     console.log('YouTube running on port ' + port);
   });
 }

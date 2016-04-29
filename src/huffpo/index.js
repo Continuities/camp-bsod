@@ -35,7 +35,7 @@ function init(port) {
   app.set('views', __dirname + '/views');
   app.use(express.static(__dirname + '/www'));
 
-  app.get('/', function(req, res) {
+  app.get('/', (req, res) => {
     res.render('home', {
       splash: 'BSOD IS AWESOME',
       splashImage: 'nope.png',
@@ -43,7 +43,7 @@ function init(port) {
     });
   });
 
-  app.listen(port, function () {
+  app.listen(port, () => {
     console.log('HuffPo running on port ' + port);
   });
 }

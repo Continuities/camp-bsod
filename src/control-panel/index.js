@@ -24,8 +24,8 @@ function tell_vlc(command) {
 }
 
 function syscall(command) {
-  return new Promise(function(resolve, reject) {
-    exec(command, function(err, stdout, stderr) {
+  return new Promise((resolve, reject) => {
+    exec(command, (err, stdout, stderr) => {
       //console.log(command + ':: ' + stdout);
       resolve(stdout);
     });
@@ -49,16 +49,16 @@ function init(port) {
     });
   });
 
-  app.post('/reboot', function (req, res) {
+  app.post('/reboot', (req, res) => {
     // This will "reboot" the a/v and lighting
     console.info('rebooting...');
-    tell_vlc('pause').then(function () {
+    tell_vlc('pause').then(() => {
       crash_timer && clearInterval(crash_timer);
       crash_timer = null;
-      setTimeout(function () {
+      setTimeout(() => {
         syscall('afplay ' + __dirname + '/' + REBOOT_SOUND)
             .then(tell_vlc.bind(null, 'pause'))
-            .then(function () {
+            .then(() => {
               console.info('rebooted');
               res.status(200).send('rebooted');
             });
@@ -66,7 +66,7 @@ function init(port) {
     });
   });
 
-  app.listen(port, function () {
+  app.listen(port, () => {
     console.log('Control running on port ' + port);
   });
 }

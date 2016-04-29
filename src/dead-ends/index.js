@@ -25,11 +25,11 @@ function init(port) {
   app.set('views', __dirname + '/views');
   app.use(express.static(__dirname + '/www'));
 
-  app.listen(port, function () {
+  app.listen(port, () => {
     console.log('Dead-ends running on port ' + port);
   });
 
-  app.get('/*', function(req, res) {
+  app.get('/*', (req, res) => {
     var page = PAGES[Math.floor(Math.random() * PAGES.length)];
     res.render(page, {});
   });

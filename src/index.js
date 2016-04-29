@@ -49,6 +49,10 @@ const SITES = [
     domain: /^(www\.)?amazon\./,
     port: 8087,
     handler: require('./amazon/index.js')
+  }, {
+    domain: /^(www\.)?google\./,
+    port: 8088,
+    handler: require('./google/index.js')
   }
 ];
 
