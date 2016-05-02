@@ -5,7 +5,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
         <meta name="theme-color" content="{+theme}#ffffff{/theme}" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="{+style}style.css{/style}" />
         <script type="text/javascript" src="script.js"></script>
     </head>
     <body>

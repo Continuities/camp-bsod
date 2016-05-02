@@ -1,0 +1,35 @@
+{>"base" /}
+{<pageTitle}{query} - Google Search{/pageTitle}
+{<style}results.css{/style}
+{<content}
+    <header>
+        <a href="/" class="logo"></a>
+    </header>
+    <nav class="card">
+        <form action="/search" class="search-form">
+            <input value="{query}" name="q" type="text" class="search-box">
+        </form>
+        <div class="scroll-wrapper">
+            <ul class="nav-links">
+                <li class="selected">ALL</li>
+                <li>IMAGES</li>
+                <li>VIDEOS</li>
+                <li>MAPS</li>
+                <li>NEWS</li>
+                <li>BOOKS</li>
+                <li>FLIGHTS</li>
+                <li>APPS</li>
+                <li>SEARCH TOOLS</li>
+            </ul>
+        </div>
+    </nav>
+    {#results}
+        <div class="card result">
+            <h3>
+                <a class="result-title" href="http://{host}/{path}">{title}</a>
+                <cite class="result-url">{host}</cite>
+            </h3>
+            <div class="result-description">{description}</div>
+        </div>
+    {/results}
+{/content}

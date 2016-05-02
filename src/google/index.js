@@ -11,6 +11,25 @@ var express = require('express');
 var app = express();
 var cons = require('consolidate');
 
+function getResults(seed) {
+  return [{
+    title: 'FOO',
+    host: 'www.foo.com',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod'
+  }, {
+    title: 'BAR',
+    host: 'www.bar.com',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod'
+  }, {
+    title: 'BAZ',
+    url: 'www.baz.com',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod'
+  }, {
+    title: 'BOZ',
+    host: 'www.boz.com',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod'
+  }];
+}
 
 function init(port) {
 
@@ -22,6 +41,13 @@ function init(port) {
 
   app.get('/', (req, res) => {
     res.render('home', { });
+  });
+
+  app.get('/search', (req, res) => {
+    res.render('results', {
+      query: req.query.q,
+      results: getResults(req.query.q)
+    });
   });
 
   app.listen(port, () => {

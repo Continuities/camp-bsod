@@ -13,8 +13,8 @@
                 <img src="google.png" class="logo-img">
             </div>
             <div class="main">
-                <form class="search-form">
-                    <input type="text" class="search-box">
+                <form action="/search" class="search-form">
+                    <input name="q" type="text" class="search-box">
                 </form>
             </div>
         </section>
