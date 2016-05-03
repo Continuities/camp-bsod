@@ -53,6 +53,10 @@ const SITES = [
     domain: /^(www\.)?google\./,
     port: 8088,
     handler: require('./google/index.js')
+  }, {
+    domain: /^(www\.)?instagram\./,
+    port: 8089,
+    handler: require('./instagram/index.js')
   }
 ];
 

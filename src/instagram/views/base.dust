@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>{+pageTitle}Instagram{/pageTitle}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{+style}style.css{/style}" />
+</head>
+<body>
+    <ul class="nav-buttons">
+        <li class="sprite home"></li>
+        <li class="sprite search"></li>
+        <li class="sprite faves"></li>
+        <li class="sprite profile"></li>
+    </ul>
+    {+content /}
+</body>
+</html>

@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('proxima-nova-b.ttf') format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('proxima-nova-bi.ttf') format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('proxima-nova.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('proxima-nova.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('proxima-nova-ni.ttf') format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('proxima-nova-db.ttf') format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('proxima-nova-db.ttf') format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('proxima-nova-l.ttf') format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 45px;
+    font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif;
+    background: #fafafa;
+}
+
+.nav-buttons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 45px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background: white;
+}
+
+.gram > header {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.age {
+    margin-left: auto;
+}
+
+.user-name {
+    color: #125688;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+}
+
+.user-photo {
+    border-radius: 50%;
+    border: 1px solid #cccfd0;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.age {
+    color: #a5a7aa;
+    font-size: 14px;
+}
+
+.gram-photo {
+    width: 100%;
+}
+
+.sprite {
+    background: url(sprites.png) no-repeat -409px -423px;
+    background-size: 299px 284px;
+    height: 24px;
+    width: 29px;
+}
+.sprite.home {
+    background-position: 0px -228px;
+}
+.sprite.search {
+    background-position: -30px -228px;
+}
+.sprite.faves {
+    background-position: -133px -132px;
+}
+.sprite.profile {
+    background-position: -127px -186px;
+}

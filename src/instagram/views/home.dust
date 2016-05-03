@@ -1,0 +1,15 @@
+{>"base" /}
+{<content}
+    {#grams}
+        <div class="gram">
+            <header>
+                {#user}
+                    <img class="user-photo" src="{photo}">
+                    <span class="user-name">{name}</span>
+                {/user}
+                <span class="age">{age}</span>
+            </header>
+            <img class="gram-photo" src="{image}">
+        </div>
+    {/grams}
+{/content}

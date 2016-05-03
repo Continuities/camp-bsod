@@ -152,7 +152,7 @@ function init(port) {
     res.render('home', { products: products });
   });
 
-  app.listen(port, function () {
+  app.listen(port, () => {
     console.log('Amazon running on port ' + port);
   });
 }
