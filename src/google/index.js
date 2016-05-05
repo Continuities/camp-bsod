@@ -31,6 +31,10 @@ function getResults(seed) {
   }];
 }
 
+function getDoodle() {
+  return "Doodle" + (Math.round(Math.random()) + 1) + ".gif";
+}
+
 function init(port) {
 
   app.engine('dust', cons.dust);
@@ -40,7 +44,7 @@ function init(port) {
   app.use(express.static(__dirname + '/www'));
 
   app.get('/', (req, res) => {
-    res.render('home', { });
+    res.render('home', { doodle: getDoodle() });
   });
 
   app.get('/search', (req, res) => {

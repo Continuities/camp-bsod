@@ -10,7 +10,7 @@
         </header>
         <section class="content">
             <div class="logo">
-                <img src="google.png" class="logo-img">
+                <img data-doodle="{doodle}" src="doodleplay.png" class="logo-img">
             </div>
             <div class="main">
                 <form action="/search" class="search-form">

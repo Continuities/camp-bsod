@@ -61,15 +61,36 @@ header {
 }
 
 .logo {
+    position: relative;
     text-align: center;
-    margin: 36px auto 18px;
-    width: 160px;
+    margin: 36px 0 18px;
+    width: 100%;
     line-height: 0;
 }
 
 .logo-img {
     width: 160px;
     margin: 8px 0;
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.logo-doodle {
+    position: absolute;
+    opacity: 0;
+    width: 196px;
+    left: 50%;
+    top: -10px;
+    margin-left: -98px;
+    transition: opacity 500ms;
+}
+
+.play .logo-img {
+    opacity: 0;
+}
+
+.play .logo-doodle {
+    opacity: 1;
 }
 
 .search-form {
