@@ -1,37 +1,20 @@
-{>"base" /}
+{>"base" style="style.css" /}
 {<content}
-    <div class="page">
-        <header>
-            <a class="header-link active" href="#">ALL</a>
-            <a class="header-link left" href="#">IMAGES</a>
-            <a class="sprite apps rights" href="#"></a>
-            <a class="sprite notifications" href="#"></a>
-            <a class="profile" href="#"></a>
-        </header>
-        <section class="content">
-            <div class="logo">
-                <img data-doodle="{doodle}" src="doodleplay.png" class="logo-img">
-            </div>
-            <div class="main">
-                <form action="/search" class="search-form">
-                    <input name="q" type="text" class="search-box">
-                </form>
-            </div>
-        </section>
-        <div class="location">
-            <span class="dot"></span>The Woods
+    <header>
+        <a class="header-link active" href="#">ALL</a>
+        <a class="header-link left" href="#">IMAGES</a>
+        <a class="sprite apps rights" href="#"></a>
+        <a class="sprite notifications" href="#"></a>
+        <a class="profile" href="#"></a>
+    </header>
+    <section class="content">
+        <div class="logo">
+            <img data-doodle="{doodle}" src="doodleplay.png" class="logo-img">
         </div>
-    </div>
-    <footer>
-        <ul class="footer-links">
-            <li>Settings</li>
-            <li>Privacy</li>
-            <li>Terms</li>
-        </ul>
-        <ul class="footer-links">
-            <li>Advertising</li>
-            <li>Business</li>
-            <li>About</li>
-        </ul>
-    </footer>
+        <div class="main">
+            <form action="/search" class="search-form">
+                <input name="q" type="text" class="search-box">
+            </form>
+        </div>
+    </section>
 {/content}

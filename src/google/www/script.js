@@ -23,7 +23,9 @@
   }, 100);
 
   var logo = document.querySelector('.logo-img');
+  if (logo) {
+    logo.addEventListener('click', playDoodle);
+    logo.addEventListener('touchstart', playDoodle);
+  }
 
-  logo.addEventListener('click', playDoodle);
-  logo.addEventListener('touchstart', playDoodle);
 })();

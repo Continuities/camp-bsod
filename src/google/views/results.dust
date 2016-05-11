@@ -1,4 +1,4 @@
-{>"base" /}
+{>"base" style="results.css"/}
 {<pageTitle}{query} - Google Search{/pageTitle}
 {<style}results.css{/style}
 {<content}
@@ -26,10 +26,10 @@
     {#results}
         <div class="card result">
             <h3>
-                <a class="result-title" href="http://{host}/{path}">{title}</a>
-                <cite class="result-url">{host}</cite>
+                <a class="result-title" href="http://{domain}/{path}?q={query}">{title}</a>
+                <cite class="result-url">{domain}</cite>
             </h3>
-            <div class="result-description">{description}</div>
+            <div class="result-description">{excerpt}</div>
         </div>
     {/results}
 {/content}

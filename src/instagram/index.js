@@ -11,6 +11,7 @@ var express = require('express');
 var app = express();
 var cons = require('consolidate');
 var fs = require('fs');
+var util = require('../util.js');
 
 var NUM_GRAMS = 10;
 var GRAMS = [];
@@ -43,7 +44,7 @@ function init(port) {
   });
 
   app.get('/', function(req, res) {
-    var grams = GRAMS.sort(() => (Math.random() * 2) - 1);
+    var grams = util.shuffle(GRAMS);
     grams.length = NUM_GRAMS;
     res.render('home', { grams: grams });
   });

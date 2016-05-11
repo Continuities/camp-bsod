@@ -10,6 +10,7 @@
 var express = require('express');
 var app = express();
 var cons = require('consolidate');
+var util = require('../util.js');
 
 var NUM_PRODUCTS = 10;
 var PRODUCTS = [
@@ -145,9 +146,8 @@ function init(port) {
   app.use(express.static(__dirname + '/www'));
 
   app.get('/', function(req, res) {
-    var products = PRODUCTS
-                    .map(p => Object.assign({ stars: getStars() }, p))
-                    .sort(() => (Math.random() * 2) - 1);
+    var products = util.shuffle(PRODUCTS
+                    .map(p => Object.assign({ stars: getStars() }, p)));
     products.length = NUM_PRODUCTS;
     res.render('home', { products: products });
   });

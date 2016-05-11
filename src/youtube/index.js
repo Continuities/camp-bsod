@@ -10,6 +10,7 @@
 var express = require('express');
 var app = express();
 var cons = require('consolidate');
+var util = require('../util.js');
 
 var HOME_VIDEOS = [
   {
@@ -81,17 +82,17 @@ function init(port) {
   app.get('/search', (req, res) => {
     res.render('search', {
       query: req.query.q,
-      videos: SEARCH_VIDEOS.map(v => {
+      videos: util.shuffle(SEARCH_VIDEOS.map(v => {
         v = Object.assign({}, v);
         v.title = v.title.replace('{query}', req.query.q);
         return v;
-      }).sort(() => (Math.random() * 2) - 1)
+      }))
     });
   });
 
   app.get('/video', (req, res) => {
     res.render('video', {
-      title: req.query.t
+      title: req.query.q
     });
   });
 

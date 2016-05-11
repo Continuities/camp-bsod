@@ -1,4 +1,4 @@
-<a class="video" href="/video?t={title}">
+<a class="video" href="/video?q={title}">
     <img class="thumbnail" src="{thumbnail}" />
     <div class="info">
         <div class="video-title">{title}</div>
