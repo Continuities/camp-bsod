@@ -109,7 +109,7 @@ function getResults(q) {
 }
 
 function getDoodle() {
-  return "Doodle" + (Math.round(Math.random()) + 1) + ".gif";
+  return "Doodle" + (Math.floor(Math.random() * 3) + 1) + ".gif";
 }
 
 function init(port) {
