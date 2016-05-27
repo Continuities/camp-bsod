@@ -27,6 +27,14 @@ body {
     height: 50%;
 }
 
+.totenkidden {
+    height: 50%;
+}
+
+.totenkidden .str0 {stroke:white;stroke-width:0.0208346;}
+.totenkidden .fil1 {fill:black; stroke:none;}
+.totenkidden .fil0 {fill:white;}
+
 .main {
     border: 2px solid red;
     font-weight: bold;
