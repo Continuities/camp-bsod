@@ -57,6 +57,10 @@ const SITES = [
     domain: /^(www\.)?instagram\./,
     port: 8089,
     handler: require('./instagram/index.js')
+  }, {
+    domain: /^(www\.)?tumblr\./,
+    port: 8090,
+    handler: require('./tumblr/index.js')
   }
 ];
 

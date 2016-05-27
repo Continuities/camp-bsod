@@ -1,0 +1,21 @@
+{>"base" /}
+{<content}
+    <div class="posts">
+        {#tumbls}
+            <div class="post">
+                <header class="post-header">
+                    {#user}
+                        <img class="user-photo" src="{photo}" />
+                        <span class="user-name">{name}</span>
+                    {/user}
+                </header>
+                <img class="post-image" src="{image}"/>
+                <footer class="post-footer">
+                    <span class="notes">{notes} notes</span>
+                    <span class="icon reblog"></span>
+                    <span class="icon like"></span>
+                </footer>
+            </div>
+        {/tumbls}
+    </div>
+{/content}
