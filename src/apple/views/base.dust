@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>{+pageTitle}Apple{/pageTitle}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{+style}style.css{/style}" />
+</head>
+<body>
+    <header>
+        <div class="menu-btn"></div>
+        <img src="apple_small.svg" style="margin: 0 13px;">
+        <img src="bag_small.svg" style="margin: 0 14px;">
+    </header>
+    {+content /}
+</body>
+</html>

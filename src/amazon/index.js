@@ -63,9 +63,9 @@ var PRODUCTS = [
     price: '12.99',
     image: 'thedevilsdiet.png'
   }, {
-    name: 'The Totenkitten Manifesto',
+    name: 'The Totenkidden Manifesto',
     stars: 5,
-    image: 'totenkittenmanifesto.png'
+    image: 'totenkiddenmanifesto.png'
   }, {
     name: 'Bacon Bandages (with bacon flavor!)',
     price: '9.99',

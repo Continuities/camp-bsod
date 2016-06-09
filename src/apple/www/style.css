@@ -1,0 +1,36 @@
+html, body {
+    paddin: 0;
+    margin: 0;
+}
+
+header {
+    height: 48px;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-btn {
+    position: relative;
+    width: 48px;
+    height: 48px;
+}
+
+.menu-btn::before,
+.menu-btn::after {
+    content: '';
+    position: absolute;
+    left: 17px;
+    width: 17px;
+    height: 1px;
+    background: #fff;
+}
+
+.menu-btn::before {
+    top: 27px;
+}
+
+.menu-btn::after {
+    bottom: 27px;
+}
