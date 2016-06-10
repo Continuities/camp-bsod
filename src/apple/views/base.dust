@@ -13,5 +13,8 @@
         <img src="bag_small.svg" style="margin: 0 14px;">
     </header>
     {+content /}
+    {?script}
+        <script type="text/javascript" src="{script}"></script>
+    {/script}
 </body>
 </html>

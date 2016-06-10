@@ -1,4 +1,10 @@
-{>"base" /}
+{>"base" script="home.js"/}
 {<content}
-    FOO
+    <ul id="slideshow" class="s1">
+        {#slides}
+            <li class="slide">
+                <img class="slide-image" src="{image}">
+            </li>
+        {/slides}
+    </ul>
 {/content}
