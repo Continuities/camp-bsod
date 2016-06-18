@@ -9,4 +9,12 @@
             </li>
         {/slides}
     </ul>
+    <ul class="tiles">
+        {#tiles}
+            <li class="tile{?bottom} bottom{/bottom}" style="background-image: url({image});">
+                <h2 class="tile-title">{title|s}</h2>
+                <h3 class="tile-subtitle">{subtitle}</h3>
+            </li>
+        {/tiles}
+    </ul>
 {/content}

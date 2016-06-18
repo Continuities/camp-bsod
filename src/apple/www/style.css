@@ -103,3 +103,55 @@ header {
     font-weight: 300;
     letter-spacing: normal;
 }
+
+.tiles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tile {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 240px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.tile-title,
+.tile-subtitle {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: #333;
+}
+
+.tile-title {
+    top: 0px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.tile-subtitle {
+    top: 25px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.bottom .tile-title {
+    top: auto;
+    bottom: 20px;
+}
+
+.bottom .tile-subtitle {
+    top: auto;
+    bottom: 0;
+}
+
+.title-svg {
+    width: 18px;
+    position: relative;
+    top: 14px;
+    left: -2px;
+}
