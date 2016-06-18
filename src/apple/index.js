@@ -51,6 +51,58 @@ function init(port) {
         subtitle: 'Watch more television.',
         image: 'tile4.png',
         bottom: true
+      }],
+      menus: [{
+        title: 'Honor Apathy',
+        options: [
+            'Reward Indifference',
+            'Obey and Conform',
+            'Submit',
+            'No Independent Thought',
+            'Use the Internet',
+            'Stay in Bed',
+            'Eat',
+            'Spend Money',
+            'Work',
+            'Consume'
+        ]
+      }, {
+        title: 'Procreate',
+        options: [
+            'Mary and Reproduce',
+            'Masturbate',
+            'Remain Passive',
+            'No Thought',
+            'Doubt Yourself',
+            'Do Not Protest',
+            'Money is Your God',
+            'Art is Terrorism',
+            'Yield',
+            'Take Your Pills'
+        ]
+      }, {
+        title: 'Follow',
+        options: [
+            'Stay in Line',
+            'Surrender'
+        ]
+      }, {
+        title: 'No Thoughts',
+        options: [
+            'No Ideas',
+            'No Freedom'
+        ]
+      }, {
+        title: 'Obey',
+        options: [
+            'Obey',
+            'Obey',
+            'Obey',
+            'Obey',
+            'Obey',
+            'Obey',
+            'Obey'
+        ]
       }]
     });
   });
