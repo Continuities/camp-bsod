@@ -22,10 +22,16 @@ function init(port) {
   app.get('/', function(req, res) {
     res.render('home', {
       slides: [{
+        title: 'Purchase More Products',
+        subtitle: 'Consume. You need this. Spend money.',
         image: 'slide1.png'
       }, {
+        title: 'This is your God',
+        subtitle: 'Work 8 hours. Sleep 8 hours.',
         image: 'slide2.png'
       }, {
+        title: 'Do Not Question Authority',
+        subtitle: 'Stay asleep.',
         image: 'slide3.png'
       }
       ]

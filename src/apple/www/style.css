@@ -1,3 +1,19 @@
+@font-face {
+    font-family:'Myriad Set Pro';
+    font-style:normal;
+    font-weight:300;
+    src:local('☺︎'), url("myriad-set-pro_thin.woff") format("woff");
+    /* Copyright (c) 1992 Adobe Systems Incorporated. All Rights Reserved. Myriad is a trademark of Adobe Systems Incorporated. */
+}
+
+@font-face {
+    font-family: 'Myriad Set Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('☺︎'), url("myriad-set-pro_text.woff") format("woff");
+    /* Copyright (c) 1992 Adobe Systems Incorporated. All Rights Reserved. Myriad is a trademark of Adobe Systems Incorporated. */
+}
+
 html, body {
     paddin: 0;
     margin: 0;
@@ -62,4 +78,28 @@ header {
 
 .slide-image {
     width: 100%;
+}
+
+.slide-title,
+.slide-subtitle {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: #333;
+}
+
+.slide-title {
+    top: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.slide-subtitle {
+    top: 50px;
+    font-size: 18px;
+    line-height: 1.3375;
+    font-weight: 300;
+    letter-spacing: normal;
 }
