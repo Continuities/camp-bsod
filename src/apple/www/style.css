@@ -168,12 +168,21 @@ footer {
     font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
     color: #333;
     line-height: 25px;
+    border-bottom: 1px solid #e3e3e3;
 }
 
 .menu-title {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 38px;
+}
+
+.menu-title::after {
+    content: '+';
+    float: right;
+    font-weight: 300;
+    margin-right: 8px;
+    transition: transform 200ms;
 }
 
 .menu-option {
@@ -181,4 +190,12 @@ footer {
     margin-left: 20px;
     font-size: 12px;
     display: none;
+}
+
+.menu.open .menu-title::after {
+    transform: rotate(45deg);
+}
+
+.menu.open .menu-option {
+    display: block;
 }
