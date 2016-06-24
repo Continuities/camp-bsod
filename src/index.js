@@ -93,7 +93,6 @@ var server = http.createServer((req, res) => {
   }
 
   proxy.web(req, res, { target: 'http://127.0.0.1:' + DEADEND.port });
-  res.end('Routing to dead-end');
 });
 
 server.listen(PORT);

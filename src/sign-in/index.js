@@ -34,7 +34,7 @@ function init(port) {
     console.log(req.headers);
     console.log('logging in ' + getIp(req));
     permittedAddresses.add(getIp(req));
-    res.redirect(302, "http://www.google.com");
+    res.redirect(302, "http://www.google.ca");
   });
 
 }
