@@ -56,17 +56,22 @@ footer {
     padding: 10px 0;
 }
 
-.list-scroller {
-    width: 100%;
-    overflow: scroll;
-    padding-bottom: 15px;
-}
-
-.product-list {
+.product-list,
+.ad-list {
     list-style: none;
     margin: 0;
     padding: 0;
     white-space: nowrap;
+}
+
+.ad-list {
+    margin-top: 10px;
+}
+
+.scroll {
+    width: 100%;
+    overflow: scroll;
+    padding-bottom: 15px;
 }
 
 .product {
@@ -107,4 +112,14 @@ footer {
     font-weight: bold;
     color: #333;
     font-size: 14px;
+}
+
+.ad {
+    display: inline-block;
+    width: 280px;
+    margin-left: 10px;
+}
+
+.ad-image {
+    width: 100%;
 }

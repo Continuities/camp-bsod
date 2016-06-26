@@ -3,19 +3,23 @@
     {#sections}
         <section class="category">
             <h2 class="category-title">{title}</h2>
-            <div class="list-scroller">
-                <ul class="product-list">
-                    {#products}
-                        <li class="product">
-                            <img class="product-image" src="{image}">
-                            <div class="product-description">
-                                {desc}
-                            </div>
-                            <div class="product-price">{price}</div>
-                        </li>
-                    {/products}
-                </ul>
-            </div>
+            <ul class="product-list scroll">
+                {#products}
+                    <li class="product">
+                        <img class="product-image" src="{image}">
+                        <div class="product-description">
+                            {desc}
+                        </div>
+                        <div class="product-price">{price}</div>
+                    </li>
+                {/products}
+            </ul>
         </section>
+        {@eq key=$idx value=0}
+            <ul class="ad-list scroll">
+                <li class="ad"><img src="ebayad1.png" class="ad-image"></li>
+                <li class="ad"><img src="ebayad2.png" class="ad-image"></li>
+            </ul>
+        {/eq}
     {/sections}
 {/content}
