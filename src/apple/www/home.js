@@ -7,7 +7,7 @@
     var curSlide = parseInt(slideshow.className.substring(1));
     if (++curSlide > numSlides) { curSlide = 1; }
     slideshow.className = 's' + curSlide;
-  }, 6000);
+  }, 4000);
 
   Array.prototype.forEach.call(document.querySelectorAll('.menu'), function(menu) {
     menu.addEventListener('click', toggleMenu);

@@ -51,8 +51,12 @@ header {
     bottom: 27px;
 }
 
-#slideshow {
+.slideshow-wrapper {
     width: 100%;
+    overflow: hidden;
+}
+
+#slideshow {
     list-style: none;
     margin: 0;
     padding: 0;

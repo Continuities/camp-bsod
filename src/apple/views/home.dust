@@ -1,14 +1,16 @@
 {>"base" script="home.js"/}
 {<content}
-    <ul id="slideshow" class="s1">
-        {#slides}
-            <li class="slide">
-                <h2 class="slide-title">{title}</h2>
-                <h3 class="slide-subtitle">{subtitle}</h3>
-                <img class="slide-image" src="{image}">
-            </li>
-        {/slides}
-    </ul>
+    <div class="slideshow-wrapper">
+        <ul id="slideshow" class="s1">
+            {#slides}
+                <li class="slide">
+                    <h2 class="slide-title">{title}</h2>
+                    <h3 class="slide-subtitle">{subtitle}</h3>
+                    <img class="slide-image" src="{image}">
+                </li>
+            {/slides}
+        </ul>
+    </div>
     <ul class="tiles">
         {#tiles}
             <li class="tile{?bottom} bottom{/bottom}" style="background-image: url({image});">

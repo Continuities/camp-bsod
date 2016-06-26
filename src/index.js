@@ -65,6 +65,10 @@ const SITES = [
     domain: /^(www\.)?apple\./,
     port: 8091,
     handler: require('./apple/index.js')
+  }, {
+    domain: /^(www\.)?ebay\./,
+    port: 8092,
+    handler: require('./ebay/index.js')
   }
 ];
 
