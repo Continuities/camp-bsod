@@ -8,6 +8,7 @@
     <nav class="card">
         <form action="/search" class="search-form">
             <input value="{query}" name="q" type="text" class="search-box">
+            <input type="submit" class="search-btn" value="">
         </form>
         <div class="scroll-wrapper">
             <ul class="nav-links">

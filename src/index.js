@@ -69,6 +69,10 @@ const SITES = [
     domain: /^(www\.)?ebay\./,
     port: 8092,
     handler: require('./ebay/index.js')
+  }, {
+    domain: /^(www\.)?pornhub\./,
+    port: 8093,
+    handler: require('./pornhub/index.js')
   }
 ];
 

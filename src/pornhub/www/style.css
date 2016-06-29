@@ -1,0 +1,198 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #141414;
+    color: #999;
+    font: 1em Arial,"Helvetica Neue",Helvetica,sans-serif;
+    line-height: 1.4;
+}
+
+header {
+    height: 48px;
+    background: #1e1e1e;
+    border-bottom: 1px solid #111;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer {
+    padding: 20px 10px;
+    text-align: center;
+    color: #666;
+    font-size: .9em;
+}
+
+.sprite {
+    background: url(sprite-ui.png) no-repeat;
+    background-size: 1035px;
+}
+
+.sprite.burger {
+    width: 31px;
+    height: 21px;
+    background-position: -643px -127px;
+    margin: 0 10px;
+}
+
+.sprite.search {
+    width: 24px;
+    height: 24px;
+    background-position: -605px -126px;
+    margin: 0 10px;
+}
+
+.sprite.rating-up {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 3px;
+    background-position: -610px -90px;
+}
+
+.logo {
+    width: 118px;
+    height: 32px;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 38px;
+    display: flex;
+    align-items: stretch;
+}
+
+.nav-item {
+    width: 25%;
+    padding: 11px 5px;
+    color: #ccc;
+    font-size: .6em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #000;
+    border-left: 1px solid #262626;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+.content {
+    padding: 10px;
+}
+
+.ad {
+    width: 100%;
+}
+
+.porn {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.porn-name {
+    color: #f90;
+    margin: 8px 0 5px;
+}
+
+.porn-thumb {
+    width: 100%;
+}
+
+.porn-rating {
+    color: #8faf1d;
+    font-size: 0.8em;
+}
+
+.inline {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-size: .8em;
+    margin-top: 10px;
+    padding: 10px;
+    color: #fff;
+    background: #1e1e1e;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.play-porn {
+    display: block;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 30%;
+    left: 44%;
+    opacity: .5;
+    box-shadow: 0 0 3px rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.play-img {
+    display: block;
+    width: 13px;
+    height: 37px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: -1px;
+}
+
+.play-img::before,
+.play-img::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 30px;
+    background: #fff;
+    position: absolute;
+}
+
+.play-img::before {
+    transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    top: -7px;
+    left: 19px;
+}
+
+.play-img::after {
+    transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    bottom: -7px;
+    left: 19px;
+}
+
+.porn-time {
+    bottom: 0;
+    right: 0;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 5px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    top: 139px;
+}
+
+video {
+    width: 100%;
+}

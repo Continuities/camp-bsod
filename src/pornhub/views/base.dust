@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <title>{+pageTitle}Free Porn Videos & Sex Movies - Porno, XXX, Porn Tube and Pussy Porn{/pageTitle}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{+style}style.css{/style}" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="sprite burger"></div>
+        <img class="logo" src="logo.png">
+        <div class="sprite search"></div>
+    </header>
+    {+content /}
+    <footer class="main-footer">
+        © BSOD, Inc.
+    </footer>
+</body>
+</html>

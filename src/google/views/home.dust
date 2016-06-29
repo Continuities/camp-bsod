@@ -14,6 +14,7 @@
         <div class="main">
             <form action="/search" class="search-form">
                 <input name="q" type="text" class="search-box">
+                <input type="submit" class="search-btn" value="">
             </form>
         </div>
     </section>

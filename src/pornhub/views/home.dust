@@ -1,0 +1,33 @@
+{>"base" /}
+{<content}
+    <ul class="nav">
+        <li class="nav-item">LIVE SEX</li>
+        <li class="nav-item">MEET & FUCK</li>
+        <li class="nav-item">PHONE SEX</li>
+        <li class="nav-item">★ PREMIUM</li>
+    </ul>
+    <div class="content">
+        <img class="ad" src="pornhubad1.png">
+        <h2>HOT VIDEOS IN BRING A CUP</h2>
+        {#porn}
+            <div class="porn">
+                <a href="/video">
+                    <img class="porn-thumb" src="{thumb}">
+                    <div class="porn-time">{time}</div>
+                    <div class="play-porn">
+                        <span class="play-img"></span>
+                    </div>
+                </a>
+                <div class="porn-name">{name}</div>
+                <div class="inline">
+                    <div class="porn-views">{views} Views</div>
+                    <div class="sprite rating-up"></div>
+                    <div class="porn-rating">
+                        100%
+                    </div>
+                </div>
+            </div>
+        {/porn}
+        <img class="ad margin-top" src="pornhubad2.png">
+    </div>
+{/content}

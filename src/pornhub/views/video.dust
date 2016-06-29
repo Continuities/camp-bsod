@@ -1,0 +1,4 @@
+{>"base" /}
+{<content}
+    <video src="{video}" autoplay="true"></video>
+{/content}
