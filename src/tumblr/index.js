@@ -12,6 +12,7 @@ var app = express();
 var cons = require('consolidate');
 var fs = require('fs');
 var util = require('../util.js');
+var port = require('yargs').argv.port;
 
 var NUM_TUMBLS = 10;
 var TUMBLS = [];
@@ -49,11 +50,7 @@ function init(port) {
     res.render('home', { tumbls: tumbls });
   });
 
-  app.listen(port, () => {
-    console.log('Tumblr running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(port);

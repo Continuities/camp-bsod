@@ -10,22 +10,7 @@
 var express = require('express');
 var app = express();
 var cons = require('consolidate');
-
-var ARTICLES = [
-  {
-    title: 'BM2017: Not As Good As Next Year',
-    image: 'nope.png'
-  }, {
-    title: 'Totenkitten\'s Secret Weapons Program',
-    image: 'nope.png'
-  }, {
-    title: 'BSOD Brings Internet To The Masses',
-    image: 'nope.png'
-  }, {
-    title: 'Herpes Outbreak at Lion\'s Den',
-    image: 'nope.png'
-  }
-];
+var port = require('yargs').argv.port;
 
 function init(port) {
 
@@ -36,18 +21,10 @@ function init(port) {
   app.use(express.static(__dirname + '/www'));
 
   app.get('/', (req, res) => {
-    res.render('home', {
-      splash: 'BSOD IS AWESOME',
-      splashImage: 'nope.png',
-      articles: ARTICLES
-    });
+    res.render('home');
   });
 
-  app.listen(port, () => {
-    console.log('HuffPo running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(port);

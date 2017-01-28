@@ -30,44 +30,13 @@
             }
 
             body.working,
-            body.working .btn{
+            body.working .btn {
                 cursor: wait;
             }
         </style>
-        <script>
-            var _locked = false;
-
-            function send(instruction) {
-                if (_locked) { return; }
-                _locked = true;
-                document.body.className = 'working';
-                var xhr = new XMLHttpRequest();
-                xhr.addEventListener("load", function() {
-                    document.body.className = '';
-                    _locked = false;
-                    toggle_button();
-                });
-                xhr.open('POST', '/' + instruction);
-                xhr.send();
-            }
-
-            function toggle_button() {
-                var crash = document.querySelector('.crash-btn')
-                ,   reboot = document.querySelector('.reboot-btn')
-                ;
-
-                if (crash.style.display === 'none') {
-                    reboot.style.display = 'none';
-                    crash.style.display = 'block';
-                } else {
-                    reboot.style.display = 'block';
-                    crash.style.display = 'none';
-                }
-            }
-        </script>
+        <script defer src="index.b.js"></script>
     </head>
     <body>
-        <div class="crash-btn btn" onclick="send('crash');">CRASH</div>
-        <div class="reboot-btn btn" style="display:none;" onclick="send('reboot');">REBOOT</div>
+        <div class="btn">CRASH</div>
     </body>
 </html>

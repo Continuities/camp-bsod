@@ -11,6 +11,7 @@ var express = require('express');
 var app = express();
 var cons = require('consolidate');
 var util = require('../util.js');
+var port = require('yargs').argv.port;
 
 var HOME_VIDEOS = [
   {
@@ -96,11 +97,7 @@ function init(port) {
     });
   });
 
-  app.listen(port, () => {
-    console.log('YouTube running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(port);

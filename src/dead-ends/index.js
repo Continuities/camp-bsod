@@ -10,6 +10,7 @@
 var express = require('express');
 var app = express();
 var cons = require('consolidate');
+var port = require('yargs').argv.port;
 
 const PAGES = [
     'bsod',
@@ -25,18 +26,12 @@ function init(port) {
   app.set('views', __dirname + '/views');
   app.use(express.static(__dirname + '/www'));
 
-  app.listen(port, () => {
-    console.log('Dead-ends running on port ' + port);
-  });
+  app.listen(port);
 
   app.get('/*', (req, res) => {
     var page = PAGES[Math.floor(Math.random() * PAGES.length)];
     res.render(page, {});
   });
-
 }
 
-module.exports = {
-  init: init,
-  permitted: req => { console.log('checking ' + getIp(req), permittedAddresses.size); var p = permittedAddresses.has(getIp(req)); console.log(p); return p;}
-};
+init(port);

@@ -12,6 +12,7 @@ var app = express();
 var fs = require('fs');
 var cons = require('consolidate');
 var util = require('../util.js');
+var port = require('yargs').argv.port;
 
 const NAMES = [
     'Stretched Asshole Prolapse XXX',
@@ -69,11 +70,7 @@ function init(port) {
     });
   });
 
-  app.listen(port, () => {
-    console.log('Pornhub running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(port);

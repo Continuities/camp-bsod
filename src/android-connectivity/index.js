@@ -9,17 +9,14 @@
 
 var express = require('express');
 var app = express();
+var port = require('yargs').argv.port;
 
 function init(port) {
   app.get('/*', (req, res) => {
     res.status(204).send();
   });
 
-  app.listen(port, () => {
-    console.log('Android Connectivity Spoofer running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(port);

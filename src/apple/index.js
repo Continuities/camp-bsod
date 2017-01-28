@@ -10,6 +10,7 @@
 var express = require('express');
 var app = express();
 var cons = require('consolidate');
+var port = require('yargs').argv.port;
 
 function init(port) {
 
@@ -107,11 +108,7 @@ function init(port) {
     });
   });
 
-  app.listen(port, () => {
-    console.log('Apple running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(port);

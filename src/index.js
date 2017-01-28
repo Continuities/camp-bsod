@@ -14,33 +14,38 @@ var SIGNIN_DOMAIN = 'signin';
 var http = require('http');
 var httpProxy = require('http-proxy');
 var signin = require('./sign-in/index.js');
+var forever = require('forever-monitor');
 
 const DEADEND = {
   port: 9000,
-  handler: require('./dead-ends/index.js')
+  path: "./src/dead-ends"
 };
 
 const SITES = [
   {
     domain: /^api$/,
-    port: 8081,
-    handler: require('./control-panel/index.js')
+    port: 9091,
+    path: "./src/control-panel"
+  }, {
+    domain: /^lights$/,
+    port: 9092,
+    path: "./src/relay-crash"
   }, {
     domain: /^(clients3\.google\.com)|(connectivitycheck\.gstatic\.com)$/,
     port: 8082,
-    handler: require('./connectivity/google.js')
+    path: "./src/android-connectivity"
   }, {
     domain: /^captive.apple.com/,
     port: 8083,
-    handler: require('./connectivity/apple.js')
+    path: "./src/apple-connectivity"
   }, {
     domain: /^(www\.)?youtube\./,
     port: 8084,
-    handler: require('./youtube/index.js')
+    path: "./src/youtube"
   }, {
     domain: /^(www\.)?(huffingtonpost|huffpost)\./,
     port: 8085,
-    handler: require('./huffpo/index.js')
+    path: "./src/huffpo"
   }, {
     domain: new RegExp('^' + SIGNIN_DOMAIN + '$'),
     port: 8086,
@@ -48,39 +53,60 @@ const SITES = [
   }, {
     domain: /^(www\.)?amazon\./,
     port: 8087,
-    handler: require('./amazon/index.js')
+    path: "./src/amazon"
   }, {
     domain: /^(www\.)?google\./,
     port: 8088,
-    handler: require('./google/index.js')
+    path: "./src/google"
   }, {
     domain: /^(www\.)?instagram\./,
     port: 8089,
-    handler: require('./instagram/index.js')
+    path: "./src/instagram"
   }, {
     domain: /^(www\.)?tumblr\./,
     port: 8090,
-    handler: require('./tumblr/index.js')
+    path: "./src/tumblr"
   }, {
     domain: /^(www\.)?apple\./,
     port: 8091,
-    handler: require('./apple/index.js')
+    path: "./src/apple"
   }, {
     domain: /^(www\.)?ebay\./,
     port: 8092,
-    handler: require('./ebay/index.js')
+    path: "./src/ebay"
   }, {
     domain: /^(www\.)?pornhub\./,
     port: 8093,
-    handler: require('./pornhub/index.js')
+    path: "./src/pornhub"
   }
 ];
 
-DEADEND.handler.init(DEADEND.port);
+function startSite(site) {
+  if (site.path) {
+    // Spin the site up in a separate restartable process
+    var child = new (forever.Monitor)(site.path + '/index.js', {
+      args: ['--port', site.port]
+    });
+    child.on('start', function () {
+      console.log(`${site.path} started on port ${site.port}`);
+    });
+    child.on('restart', function () {
+      console.log(`${site.path} restarted on port ${site.port}`);
+    });
+    child.on('exit', function () {
+      console.log(`${site.path} has exited after 3 restarts`);
+    });
 
-SITES.forEach(function(site){
-  site.handler.init(site.port);
-});
+    child.start();
+  } else if (site.handler) {
+    // Run in the same process
+    // Try not to use this, as it's fragile
+    site.handler.init(site.port);
+  }
+}
+
+startSite(DEADEND);
+SITES.forEach(startSite);
 
 var proxy = httpProxy.createProxyServer({ xfwd: true });
 var server = http.createServer((req, res) => {

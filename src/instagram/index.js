@@ -12,6 +12,7 @@ var app = express();
 var cons = require('consolidate');
 var fs = require('fs');
 var util = require('../util.js');
+var port = require('yargs').argv.port;
 
 var NUM_GRAMS = 10;
 var GRAMS = [];
@@ -49,11 +50,7 @@ function init(port) {
     res.render('home', { grams: grams });
   });
 
-  app.listen(port, () => {
-    console.log('Instagram running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(port);

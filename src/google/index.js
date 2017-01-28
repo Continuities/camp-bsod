@@ -11,6 +11,7 @@ var express = require('express');
 var app = express();
 var cons = require('consolidate');
 var util = require('../util.js');
+var port = require('yargs').argv.port;
 
 const NUM_RESULTS = 10;
 const PAGES = [
@@ -143,11 +144,7 @@ function init(port) {
     });
   });
 
-  app.listen(port, () => {
-    console.log('Google running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(port);

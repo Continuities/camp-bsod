@@ -11,6 +11,7 @@ var express = require('express');
 var app = express();
 var cons = require('consolidate');
 var util = require('../util.js');
+var argv = require('yargs').argv;
 
 var NUM_PRODUCTS = 10;
 var PRODUCTS = [
@@ -152,11 +153,7 @@ function init(port) {
     res.render('home', { products: products });
   });
 
-  app.listen(port, () => {
-    console.log('Amazon running on port ' + port);
-  });
+  app.listen(port);
 }
 
-module.exports = {
-  init: init
-};
+init(argv.port);
