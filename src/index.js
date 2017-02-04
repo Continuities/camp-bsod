@@ -122,11 +122,15 @@ var server = http.createServer((req, res) => {
 
   if (site) {
     console.log('Routing to port ' + site.port);
-    proxy.web(req, res, { target: 'http://127.0.0.1:' + site.port });
+    proxy.web(req, res, { target: 'http://127.0.0.1:' + site.port }, e => {
+      console.error("Proxy failed: ", e);
+    });
     return;
   }
 
-  proxy.web(req, res, { target: 'http://127.0.0.1:' + DEADEND.port });
+  proxy.web(req, res, { target: 'http://127.0.0.1:' + DEADEND.port }, e => {
+    console.error("Proxy failed: ", e);
+  });
 });
 
 server.listen(PORT);
