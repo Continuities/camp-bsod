@@ -115,7 +115,7 @@ function startSite(site) {
 }
 
 function needsSignin(host) {
-  return FREE_SITES.indexOf(host) >= 0;
+  return FREE_SITES.indexOf(host) < 0;
 }
 
 startSite(DEADEND);
