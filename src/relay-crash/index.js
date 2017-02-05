@@ -34,18 +34,16 @@ function init(port) {
     // This will "crash" the lighting
     console.info('crash');
     relay && relay.write([0x0, ON, 1]);
-    res.setHeader('Access-Control-Allow-Origin', '*')
-        .status(200)
-        .send('crashed');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.status(200).send('crashed');
   });
 
   app.post('/reboot', (req, res) => {
     // This will "reboot" the lighting
     console.info('rebooting...');
     relay && relay.write([0x0, OFF, 1]);
-    res.setHeader('Access-Control-Allow-Origin', '*')
-        .status(200)
-        .send('rebooted');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.status(200).send('rebooted');
   });
 
   app.listen(port);
