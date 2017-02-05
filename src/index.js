@@ -8,13 +8,22 @@
 
 'use strict';
 
-var PORT = 80;
-var SIGNIN_DOMAIN = 'signin';
+const PORT = 80
+  , SIGNIN_DOMAIN = 'signin'
+  , LIGHTS_DOMAIN = 'lights'
+  , API_DOMAIN = 'api'
 
-var http = require('http');
-var httpProxy = require('http-proxy');
-var signin = require('./sign-in/index.js');
-var forever = require('forever-monitor');
+  , http = require('http')
+  , httpProxy = require('http-proxy')
+  , signin = require('./sign-in/index.js')
+  , forever = require('forever-monitor')
+;
+
+const FREE_SITES = [
+  SIGNIN_DOMAIN,
+  LIGHTS_DOMAIN,
+  API_DOMAIN
+];
 
 const DEADEND = {
   port: 9000,
@@ -23,11 +32,11 @@ const DEADEND = {
 
 const SITES = [
   {
-    domain: /^api$/,
+    domain: new RegExp('^' + API_DOMAIN + '$'),
     port: 9091,
     path: "./src/control-panel"
   }, {
-    domain: /^lights$/,
+    domain: new RegExp('^' + LIGHTS_DOMAIN + '$'),
     port: 9092,
     path: "./src/relay-crash"
   }, {
@@ -105,12 +114,16 @@ function startSite(site) {
   }
 }
 
+function needsSignin(host) {
+  return FREE_SITES.indexOf(host) >= 0;
+}
+
 startSite(DEADEND);
 SITES.forEach(startSite);
 
 var proxy = httpProxy.createProxyServer({ xfwd: true });
 var server = http.createServer((req, res) => {
-  if (req.headers.host !== SIGNIN_DOMAIN && !signin.permitted(req)) {
+  if (needsSignin(req.headers.host) && !signin.permitted(req)) {
     console.log('redirecting to sign-in');
     res.writeHead(302, { 'Location': 'http://' + SIGNIN_DOMAIN });
     res.end();
