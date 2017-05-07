@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>{+pageTitle}National Geographic{/pageTitle}</title>
+    <title>{+pageTitle}Nationalistic Geocentrism{/pageTitle}</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
     <link rel="stylesheet" href="{+style}style.css{/style}" />
@@ -34,11 +34,11 @@
     <footer>
         <h3>
             Follow us
-            <li class="social-icons">
-                <ul><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#social-facebook"></use></svg></ul>
-                <ul><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#social-twitter"></use></svg></ul>
-                <ul><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#social-instagram"></use></svg></ul>
-            </li>
+            <ul class="social-icons">
+                <li><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#social-facebook"></use></svg></li>
+                <li><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#social-twitter"></use></svg></li>
+                <li><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#social-instagram"></use></svg></li>
+            </ul>
         </h3>
         <ul class="footer-links">
             <li>Terms of service</li>
