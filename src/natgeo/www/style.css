@@ -1,0 +1,73 @@
+@import 'HCo_fonts.css';
+
+html, body { margin: 0; padding: 0; }
+
+header {
+    padding: 0 20px;
+    height: 44px;
+    background: black;
+    font-family: "HCo Verlag", "CenturyGothic", AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.6875rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-down {
+    height: 1.5rem;
+    width: 0.8em;
+    fill: currentColor;
+    margin-left: 0.4375rem;
+    top: -.07em;
+    position: relative;
+    vertical-align: middle;
+}
+
+.search {
+    height: 1.4375rem;
+    min-width: 1.4375rem;
+    max-width: 1.4375rem;
+    margin-left: auto;
+}
+
+.burger {
+    height: 28px;
+    min-width: 28px;
+    max-width: 28px;
+    margin-right: 20px;
+    margin-left: 35px;
+}
+
+.logo:before {
+    content: '';
+    height: 50px;
+    min-width: 34.89px;
+    max-width: 34.89px;
+    border: 5px solid #ffcd05;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+
+.logo {
+    margin-left: 1.25rem;
+    font-family: "HCo Verlag", "CenturyGothic", AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}

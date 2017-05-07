@@ -18,10 +18,10 @@
     "forever-monitor": "^1.7.1",
     "http-proxy": "^1.13.2",
     "node-hid": "^0.5.1",
-    "yargs": "^6.6.0"
+    "yargs": "^8.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.9.1",
-    "webpack": "^1.14.0"
+    "webpack": "^2.5.1"
   }
 }
