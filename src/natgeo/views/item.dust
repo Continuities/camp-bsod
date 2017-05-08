@@ -1,0 +1,9 @@
+{#data}
+<div class="item {type}">
+    <div class="image">
+        <img src="{image}">
+    </div>
+    {?subtitle}<div class="subtitle">{subtitle}</div>{/subtitle}
+    <h4>{title}</h4>
+</div>
+{/data}

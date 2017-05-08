@@ -22,7 +22,20 @@ function init(port) {
 
   app.get('/', function(req, res) {
     res.render('home', {
-      // TODO
+      items: [{
+        type: 'cover',
+        image: 'cover-photo.png',
+        title: 'Firefly Attendees Are A Bunch Of Stinky Hippies'
+      }, {
+        type: 'article',
+        image: 'pinchy.png',
+        title: 'The Pinchy Invasion: What You Should Know About Vermont\'s Forest Lobster Problem'
+      }, {
+        type: 'gallery',
+        image: 'pickle.png',
+        title: 'Reasons Why You Should Deep Throat This Chocolate Covered Pickle',
+        subtitle: '15 Photos'
+      }]
     });
   });
 

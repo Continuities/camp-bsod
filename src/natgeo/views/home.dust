@@ -1,4 +1,6 @@
 {>"base" script="home.js"/}
 {<content}
-    CONTENT
+    {#items}
+        {>"item" data=. /}
+    {/items}
 {/content}
