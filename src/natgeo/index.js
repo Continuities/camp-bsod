@@ -95,6 +95,22 @@ function init(port) {
         image: 'map.png',
         supertitle: 'all over the map',
         title: 'Firefly Is Literally The Only Thing That Happens In Bethel, Vermont'
+      }],
+      misc: [{
+        type: 'cover',
+        image: 'astral.png',
+        supertitle: 'magazine',
+        title: 'Trip The Light Fantastic At Astral Chill'
+      }, {
+        type: 'cover',
+        image: 'wtf.png',
+        supertitle: 'sponsored by bmorg',
+        title: 'Burner Traditions: What The Fuck Is Going On Here?'
+      }, {
+        type: 'cover',
+        image: 'riskee.png',
+        supertitle: 'sponsored by site3 fire arts',
+        title: 'Burn Your Eyebrows Off With Riskee Ball'
       }]
     });
   });

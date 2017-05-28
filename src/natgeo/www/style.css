@@ -279,7 +279,7 @@ h3 {
     padding: 0 30px;
 }
 
-.potd > .subtitle {
+.potd > .subtitle, .cover > .supertitle, .potd .supertitle {
     margin-left: 30px;
 }
 
@@ -427,6 +427,7 @@ h3 {
     background: #222;
     color: white;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 .tiny {
@@ -447,4 +448,74 @@ h3 {
 
 .tiny .supertitle {
     width: calc(54% - 45px);
+}
+
+.misc {
+    background: black;
+    color: white;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.misc .mr-head {
+    background: black;
+}
+
+.bts {
+    background: black;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.its-over {
+    padding: 15px;
+    background: #fc0;
+    position: relative;
+}
+
+.its-over .image {
+    margin: 0;
+}
+
+.end-content {
+    background: white;
+    padding: 30px;
+    font-family: "Haas","Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;
+    line-height: 1.5;
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    word-spacing: .05em;
+}
+
+.end-text {
+    padding-left: 30px;
+    margin-bottom: 30px;
+    border-left: 1px solid #e6e6e6;
+}
+
+.overlay {
+    top: 45px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    position: absolute;
+    color: white;
+}
+
+.overlay .supertitle {
+    border-color: white;
+}
+
+.overlay h4 {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 10% 30px;
 }

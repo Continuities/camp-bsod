@@ -25,4 +25,35 @@
             {>"item" data=. /}
         {/latestStories}
     </div>
+    <div class="misc">
+        <div class="mr-head">
+            <h3>Rampant Psychedelia</h3>
+        </div>
+        {#misc}
+            {>"item" data=. /}
+        {/misc}
+    </div>
+    <div class="item cover bts">
+        <div class="image">
+            <img src="bts.png">
+        </div>
+        <div class="supertitle">behind the scenes</div>
+        <h4>I Just Amazed You're Still Reading</h4>
+    </div>
+    <div class="item its-over">
+        <div class="image">
+            <img src="writer.png">
+        </div>
+        <div class="overlay">
+            <div class="supertitle">july 2017 issue</div>
+            <h4>Parody Writer Completely Out Of Ideas</h4>
+        </div>
+        <div class="end-content">
+            <div class="end-text">
+                <h5>Let's face it, folks</h5>
+                Ain't nobody reading this far down the page. I really should have given up sooner, but I am nothing if not dedicated to my art. In the off chance that you read this: I did it all for you.
+            </div>
+            <div class="button">READ MORE</div>
+        </div>
+    </div>
 {/content}
