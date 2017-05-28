@@ -1,9 +1,29 @@
 {#data}
 <div class="item {type}">
-    <div class="image">
-        <img src="{image}">
-    </div>
-    {?subtitle}<div class="subtitle">{subtitle}</div>{/subtitle}
+    {@eq key=type value="potd"}
+        <div class="potd-head">
+            PHOTO OF THE DAY
+            <div class="see-all">
+                SEE ALL
+                <svg><title>Plus Icon</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use></svg>
+            </div>
+        </div>
+    {/eq}
+    {?image}
+        <div class="image">
+            <img src="{image}">
+        </div>
+    {/image}
+    {?supertitle}<div class="supertitle">{supertitle}</div>{/supertitle}
     <h4>{title}</h4>
+    {?subtitle}<div class="subtitle">{subtitle}</div>{/subtitle}
+    {?subimage}
+        <div class="image">
+            <img src="{subimage}">
+        </div>
+    {/subimage}
+    {@eq key=type value="indexed"}
+        <div class="index">{@math key=index method="add" operand=1 /}</div>
+    {/eq}
 </div>
 {/data}

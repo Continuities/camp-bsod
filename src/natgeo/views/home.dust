@@ -3,4 +3,26 @@
     {#items}
         {>"item" data=. /}
     {/items}
+    <div class="videos">
+        <h3>Videos to watch</h3>
+        {#videos}
+            {>"item" data=. /}
+        {/videos}
+    </div>
+    <div class="most-read">
+        <div class="mr-head">
+            <h3>Most Read</h3>
+        </div>
+        {#mostRead}
+            {>"item" data=. index=$idx/}
+        {/mostRead}
+    </div>
+    <div class="latest-stories">
+        <div class="mr-head">
+            <h3>Latest Stories</h3>
+        </div>
+        {#latestStories}
+            {>"item" data=. /}
+        {/latestStories}
+    </div>
 {/content}
