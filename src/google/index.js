@@ -95,6 +95,10 @@ const PAGES = [
     title: 'Sometimes {0} Happens - GIF on Imgur',
     domain: 'www.imgur.com',
     excerpt: 'Sometimes {0} Happens. Uploaded 6 months ago. 7124 points. 12,034 views.'
+  }, {
+    title: 'Unexplained {0} - National Geographic Video',
+    domain: 'www.nationalgeographic.com',
+    excerpt: 'A few of the natural mysteries that bother scientists are ...'
   }
 ];
 
