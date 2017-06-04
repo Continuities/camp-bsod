@@ -8,7 +8,7 @@
 
 'use strict';
 
-const PORT = 8080
+const PORT = 80
   , SIGNIN_DOMAIN = 'signin'
   , LIGHTS_DOMAIN = 'lights'
   , API_DOMAIN = 'api'
@@ -19,12 +19,6 @@ const PORT = 8080
   , forever = require('forever-monitor')
 ;
 
-const FREE_SITES = [
-  SIGNIN_DOMAIN,
-  LIGHTS_DOMAIN,
-  API_DOMAIN
-];
-
 const DEADEND = {
   port: 9000,
   path: "./src/dead-ends"
@@ -34,11 +28,13 @@ const SITES = [
   {
     domain: new RegExp('^' + API_DOMAIN + '$'),
     port: 9091,
-    path: "./src/control-panel"
+    path: "./src/control-panel",
+    nosignin: true
   }, {
     domain: new RegExp('^' + LIGHTS_DOMAIN + '$'),
     port: 9092,
-    path: "./src/relay-crash"
+    path: "./src/relay-crash",
+    nosignin: true,
   }, {
     domain: /^(clients3\.google\.com)|(connectivitycheck\.gstatic\.com)$/,
     port: 8082,
@@ -58,7 +54,8 @@ const SITES = [
   }, {
     domain: new RegExp('^' + SIGNIN_DOMAIN + '$'),
     port: 8086,
-    handler: signin
+    handler: signin,
+    nosignin: true
   }, {
     domain: /^(www\.)?amazon\./,
     port: 8087,
@@ -118,24 +115,25 @@ function startSite(site) {
   }
 }
 
-function needsSignin(host) {
-  return FREE_SITES.indexOf(host) < 0;
+function needsSignin(site) {
+  return !site || !site.nosignin;
 }
 
 startSite(DEADEND);
 SITES.forEach(startSite);
 
-var proxy = httpProxy.createProxyServer({ xfwd: true });
-var server = http.createServer((req, res) => {
-  if (needsSignin(req.headers.host) && !signin.permitted(req)) {
+const proxy = httpProxy.createProxyServer({ xfwd: true });
+const server = http.createServer((req, res) => {
+
+  const host = req.headers.host;
+  const site = SITES.reduce((value, s) => value || (s.domain.test(host) && s), false);
+
+  if (needsSignin(site) && !signin.permitted(req)) {
     console.log('redirecting to sign-in');
     res.writeHead(302, { 'Location': 'http://' + SIGNIN_DOMAIN });
     res.end();
     return;
   }
-
-  var host = req.headers.host;
-  var site = SITES.reduce((value, s) => value || (s.domain.test(host) && s), false);
 
   if (site) {
     console.log('Routing to port ' + site.port);
