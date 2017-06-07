@@ -8,7 +8,7 @@
 
 'use strict';
 
-const PORT = 80
+const PORT = 8080
   , SIGNIN_DOMAIN = 'signin'
   , LIGHTS_DOMAIN = 'lights'
   , API_DOMAIN = 'api'
@@ -88,6 +88,10 @@ const SITES = [
     domain: /(^www\.)?nationalgeographic\./,
     port: 8094,
     path: "./src/natgeo"
+  }, {
+    domain: /(^www\.)?gofundme\./,
+    port: 8095,
+    path: "./src/gofundme"
   }
 ];
 

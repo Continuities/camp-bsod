@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{+pageTitle}GoFundMe: #1 for Crowdfunding & Fundraising Websites{/pageTitle}</title>
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+        <meta content="true" name="HandheldFriendly">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="common.css" />
+        <script type="text/javascript" defer="true" src="common.js"></script>
+    </head>
+    <body>
+        <header>
+            <button class="button">
+                <span class="burger-lines"></span>
+            </button>
+            <div class="logo"></div>
+            <button class="button">
+                <span class="search-icon"></span>
+            </button>
+        </header>
+        <div class="content">
+            {+content /}
+        </div>
+    </body>
+</html>

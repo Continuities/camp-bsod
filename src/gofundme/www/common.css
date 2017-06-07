@@ -1,0 +1,120 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, :after, :before {
+    box-sizing: inherit;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    background: #fff;
+    border-radius: 4px 4px 0 0;
+    height: 3.3125rem;
+    padding: 0 1rem;
+    position: relative;
+    top: -.0625rem;
+    width: 3.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+}
+
+.burger-lines {
+    background: #5d8000;
+    border-radius: .0625rem;
+    display: block;
+    height: .1875rem;
+    margin: 0 auto;
+    top: -.0625rem;
+    transition: .3s;
+    width: 1.3125rem;
+    position: relative;
+}
+
+.burger-lines:before,
+.burger-lines:after {
+    background: #5d8000;
+    border-radius: .0625rem;
+    display: block;
+    height: .1875rem;
+    margin: 0 auto;
+    top: -.0625rem;
+    transition: .3s;;
+    content: '';
+    left: 0;
+    position: absolute;
+    -ms-transform-origin: .13393rem center;
+    transform-origin: .13393rem center;
+    width: 100%;
+}
+
+.burger-lines:before {
+    top: 7px;
+}
+
+.burger-lines:after {
+    top: -7px;
+}
+
+.logo {
+    background-image: url(logo.png);
+    background-size: 110px 35px;
+    display: inline-block;
+    height: 35px;
+    text-indent: -9999px;
+    width: 110px;
+}
+
+.search-icon {
+    background: 0 0;
+    border-radius: 0;
+    display: block;
+    height: 1.40625rem;
+    transition: .3s;
+    width: 1.54688rem;
+    position: relative;
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: .25rem;
+}
+
+.search-icon:before,
+.search-icon:after {
+    background: 0 0;
+    border-radius: 0;
+    display: block;
+    height: 1.40625rem;
+    transition: .3s;
+    bottom: 0;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.search-icon:before {
+    background: #5d8000;
+    border-radius: .13393rem;
+    height: .1875rem;
+    left: 0;
+}
+
+.search-icon:after {
+    background: #fff;
+    border: .1875rem solid #5d8000;
+    border-radius: 50%;
+    height: 1.0313rem;
+    right: 0;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    width: 1.0313rem;
+}
