@@ -8,7 +8,6 @@
   var slideshow = document.getElementById('carousel');
   var slides = slideshow.querySelectorAll('.tile');
   var numSlides = slides.length;
-  var curSlide = 0;
 
   function slide(toSlide) {
 
