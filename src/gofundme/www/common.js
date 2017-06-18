@@ -1,15 +1,50 @@
 (function() {
+
+  var CAROUSEL_SPEED = 6000;
+  var SLIDE_SPEED = 500;
+
   'use strict';
 
   var slideshow = document.getElementById('carousel');
   var slides = slideshow.querySelectorAll('.tile');
   var numSlides = slides.length;
   var curSlide = 0;
-  setInterval(function() {
-    if (++curSlide >= numSlides) { curSlide = 0; }
-    slideshow.style = 'transform: translate(-' + curSlide * 100 + '%);'
-    typeWords(slides[curSlide].querySelector('.fund'));
-  }, 6000);
+
+  function slide(toSlide) {
+
+    if (toSlide + 1 >= numSlides ) {
+      setTimeout(loop, CAROUSEL_SPEED);
+    }
+    else {
+      setTimeout(slide.bind(null, toSlide + 1), CAROUSEL_SPEED);
+    }
+
+    slideshow.style = 'transform: translate(-' + toSlide * 100 + '%);';
+    typeWords(slides[toSlide].querySelector('.fund'));
+  }
+
+  function loop() {
+
+    setTimeout(slide.bind(null, 1), CAROUSEL_SPEED);
+
+    setTimeout(function() {
+      slideshow.offsetLeft;
+      slideshow.classList.add('looping');
+      slideshow.appendChild(slideshow.firstChild);
+      slideshow.style = 'transform: translate(0);';
+      slideshow.offsetLeft;
+      slideshow.classList.remove('looping');
+    }, SLIDE_SPEED);
+
+    slideshow.classList.add('looping');
+    slideshow.offsetLeft;
+    slideshow.insertBefore(slideshow.lastChild, slideshow.firstChild);
+    slideshow.style = 'transform: none;';
+    slideshow.offsetLeft;
+    slideshow.classList.remove('looping');
+    slideshow.style = 'transform: translate(-' + 100 + '%);';
+    typeWords(slides[0].querySelector('.fund'));
+  }
 
   function typeWords(elem) {
     var words = elem.innerText;
@@ -28,6 +63,6 @@
     return Math.floor(Math.random() * (high - low)) + low;
   }
 
-  typeWords(slides[0].querySelector('.fund'));
+  slide(0);
 
 }());

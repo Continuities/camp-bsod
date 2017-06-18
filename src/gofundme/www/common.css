@@ -179,6 +179,10 @@ header {
     transition: transform 500ms ease;
 }
 
+#carousel.looping {
+    transition: none;
+}
+
 .tile {
     box-sizing: border-box;
     text-align: center;

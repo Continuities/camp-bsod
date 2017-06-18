@@ -20,7 +20,7 @@ const CAMPAIGNS = processCampaigns([{
   description: 'The members of Camp Dust Apes are still recovering from being forced to listen to Nyan Cat on repeat at Hyperborea 2017.'
 }, {
   image: 't-shirt.png',
-  title: 'Help fun Camp Luminos\' fundraiser',
+  title: 'Help fund Camp Luminos\' fundraiser',
   raised: 3745,
   goal: 5000,
   description: 'We need a graphic designer who is willing to create graphics for the t-shirts that we will be selling at our fundraiser.'
