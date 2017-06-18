@@ -536,3 +536,58 @@ footer {
     content: '';
     color: #333;
 }
+
+.facebook-block {
+    background: #93a3c9;
+    color: #fff;
+    padding: 1.375rem 1rem .5rem;
+    position: relative;
+    text-align: center;
+    line-height: 1.5625rem;
+    font-size: 1.25rem;
+}
+
+.fb-button {
+    background: linear-gradient(to bottom,#3b579d 0,#344d8a 100%);
+    font-size: 1.125rem;
+    padding: .6875rem .625rem .75rem;
+    border: 1px solid transparent;
+    border-bottom: 3px solid rgba(0,0,0,.18);
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    margin: 0 0 1rem 0;
+    line-height: 1;
+    margin-top: 16px;
+}
+.fb-button:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 5px;
+}
+
+.ad {
+    background: white;
+    padding: 20px 16px 14px;
+    text-align: center;
+}
+
+.ad-title {
+    border-bottom: 1px dotted #cacaca;
+    padding-bottom: .4375rem;
+    line-height: 1.5625rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.ad-list > li {
+    margin-bottom: 1.125rem;
+    font-size: 15px;
+}
+
+.ad .start-button {
+    margin: 0;
+}

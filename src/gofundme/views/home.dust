@@ -27,6 +27,27 @@
         <div class="campaign-description">{description}</div>
         <div class="more">+ Read More</div>
     </div>
+    {@eq key=$idx value=1}
+        <div class="facebook-block">
+            See what your friends support
+            <div class="fb-button">
+                Continue
+            </div>
+        </div>
+    {/eq}
+    {@eq key=$idx value=2}
+        <div class="ad">
+            <div class="ad-title">Why GoFundMe?</div>
+            <ul class="ad-list">
+                <li>5-minute email support</li>
+                <li>Mobile-friendly campaigns</li>
+                <li>GoFundMe mobile app</li>
+                <li>No deadlines or goal requirements</li>
+                <li>Keep every donation you receive</li>
+            </ul>
+            <div class="start-button">Start a Campaign</div>
+        </div>
+    {/eq}
 {/campaigns}
 <div class="more-button">View More Campaigns</div>
 
