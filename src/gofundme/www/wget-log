@@ -1,0 +1,11 @@
+--2017-06-18 00:20:42--  https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.eot?
+Resolving maxcdn.bootstrapcdn.com... 198.232.125.123
+Connecting to maxcdn.bootstrapcdn.com|198.232.125.123|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 70807 (69K) [application/vnd.ms-fontobject]
+Saving to: ‘fontawesome-webfont.eot?’
+
+fontawesome-webfont.eot?    0%[                                   ]       0  --.-KB/s               fontawesome-webfont.eot?  100%[==================================>]  69.15K  --.-KB/s    in 0.05s   
+
+2017-06-18 00:20:42 (1.43 MB/s) - ‘fontawesome-webfont.eot?’ saved [70807/70807]
+

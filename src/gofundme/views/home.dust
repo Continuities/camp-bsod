@@ -1,7 +1,7 @@
 {>"base" /}
 {<content}
 <div class="marquee">
-    <ul class="carousel">
+    <ul id="carousel" class="s1">
         {#carousel}
             <li class="tile" style="background-image:url({image});">
                 Go fund
@@ -9,8 +9,8 @@
             </li>
         {/carousel}
     </ul>
-    <div class="button">Start a Campaign</div>
-    <div class="search">Search by name, title, or town/city</div>
+    <div class="start-button">Start a Campaign</div>
+    <div class="search">Search by name, title, or city</div>
     <ul class="categories">
         <li class="category medical">Medical</li>
         <li class="category volunteer">Volunteer</li>
@@ -22,15 +22,18 @@
     <img class="campaign-image" src="{image}">
     <h3 class="campaign-title">{title}</h3>
     <div class="campaign-progress"><div class="progress-bar" style="width:{progressPercent}%;"></div></div>
-    <div class="campaign-description">{description}</div>
-    <div class="more">+ Read More</div>
+    <div class="campaign-info">
+        {progressText|s}
+        <div class="campaign-description">{description}</div>
+        <div class="more">+ Read More</div>
+    </div>
 {/campaigns}
 <div class="more-button">View More Campaigns</div>
 
 <div class="bottom">
     <ul class="braggery">
         <li class="brag no1">
-            <div class="brag-title">No. 1 Fudraising Platform</div>
+            <div class="brag-title">#1 Fundraising Platform</div>
             <div class="brag-desc">People have raised more money on GoFundMe than anywhere else.</div>
             <div class="brag-cta">How It Works</div>
         </li>

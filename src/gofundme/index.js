@@ -40,13 +40,13 @@ const CAMPAIGNS = processCampaigns([{
 
 function processCampaigns(campaigns) {
   return campaigns.map(c => Object.assign(c, {
-    progressPercent: Math.round(c.goal / c.raised * 100),
+    progressPercent: Math.round(c.raised / c.goal * 100),
     progressText: progressText(c.raised, c.goal)
   }));
 }
 
 function progressText(raised, goal) {
-  return `<span class='raised'>${formatMoney(raised)}</span> of ${formatMoney(goal, true)}`;
+  return `<strong>${formatMoney(raised)} raised</strong> of ${formatMoney(goal, true)}`;
 }
 
 function formatMoney(amount, truncate) {
