@@ -4,11 +4,27 @@ html, body {
     box-sizing: border-box;
 }
 
+body {
+    background: #f9faf5;
+    padding-top: 53px;
+}
+
 *, :after, :before {
     box-sizing: inherit;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.25);
+    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -1,4 +1,69 @@
 {>"base" /}
 {<content}
+<div class="marquee">
+    <ul class="carousel">
+        {#carousel}
+            <li class="tile" style="background-image:url({image});">
+                Go fund
+                <div class="fund">{text}</div>
+            </li>
+        {/carousel}
+    </ul>
+    <div class="button">Start a Campaign</div>
+    <div class="search">Search by name, title, or town/city</div>
+    <ul class="categories">
+        <li class="category medical">Medical</li>
+        <li class="category volunteer">Volunteer</li>
+        <li class="category emergencies">Emergencies</li>
+    </ul>
+</div>
+<h2>Recommended For You</h2>
+{#campaigns}
+    <img class="campaign-image" src="{image}">
+    <h3 class="campaign-title">{title}</h3>
+    <div class="campaign-progress"><div class="progress-bar" style="width:{progressPercent}%;"></div></div>
+    <div class="campaign-description">{description}</div>
+    <div class="more">+ Read More</div>
+{/campaigns}
+<div class="more-button">View More Campaigns</div>
 
+<div class="bottom">
+    <ul class="braggery">
+        <li class="brag no1">
+            <div class="brag-title">No. 1 Fudraising Platform</div>
+            <div class="brag-desc">People have raised more money on GoFundMe than anywhere else.</div>
+            <div class="brag-cta">How It Works</div>
+        </li>
+        <li class="brag guarantee">
+            <div class="brag-title">GoFundMe Guarantee</div>
+            <div class="brag-desc">Your donation is protected. If anything is not right, we will give you a full refund.</div>
+            <div class="brag-cta">Learn More</div>
+        </li>
+        <li class="brag support">
+            <div class="brag-title">5-Minute Support</div>
+            <div class="brag-desc">Contact us with your questions and we will reply in 5 minutes — 24/7.</div>
+            <div class="brag-cta">Get Help</div>
+        </li>
+    </ul>
+    <ul class="foot-menu">
+        <li class="foot-item">Get Started</li>
+        <li class="foot-item">Top Categories</li>
+        <li class="foot-item">Learn More</li>
+        <li class="foot-item">Get Support</li>
+    </ul>
+    <div class="lang">English (US)</div>
+</div>
+<footer>
+    <ul class="foot-links">
+        <li>Term</li>
+        <li>Privacy</li>
+        <li>Legal</li>
+    </ul>
+    <div class="copyright">© 2020-2077 BSOD</div>
+    <ul class="social">
+        <li class="social-icon facebook"></li>
+        <li class="social-icon twitter"></li>
+        <li class="social-icon instagram"></li>
+    </ul>
+</footer>
 {/content}
