@@ -4,7 +4,7 @@
     <ul id="carousel" class="s1">
         {#carousel}
             <li class="tile" style="background-image:url({image});">
-                Go fund
+                <div class="go">Go fund</div>
                 <div class="fund">{text}</div>
             </li>
         {/carousel}

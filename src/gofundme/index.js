@@ -70,25 +70,25 @@ function init(port) {
   app.get('/', (req, res) => {
     res.render('home', {
       carousel: [{
-        image: null,
+        image: 'vacation.png',
         text: 'a vacation'
       }, {
-        image: null,
+        image: 'burner.png',
         text: 'a burner'
       }, {
-        image: null,
+        image: 'shirtcock.png',
         text: 'a shirtcocker'
       }, {
-        image: null,
+        image: 'party.png',
         text: 'your own party'
       }, {
-        image: null,
+        image: 'lamp.png',
         text: 'a light fixture'
       }, {
-        image: null,
+        image: 'theme-camp.png',
         text: 'a theme camp'
       }, {
-        image: null,
+        image: 'dj.png',
         text: 'a dj'
       }],
       campaigns: CAMPAIGNS
