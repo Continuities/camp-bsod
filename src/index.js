@@ -92,6 +92,10 @@ const SITES = [
     domain: /(^www\.)?gofundme\./,
     port: 8095,
     path: "./src/gofundme"
+  }, {
+    domain: /(^www\.)?reddit\./,
+    port: 8096,
+    path: "./src/reddit"
   }
 ];
 
