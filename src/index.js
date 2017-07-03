@@ -96,6 +96,10 @@ const SITES = [
     domain: /(^www\.)?reddit\./,
     port: 8096,
     path: "./src/reddit"
+  }, {
+    domain: /(^www\.)?whitehouse\./,
+    port: 8097,
+    path: "./src/whitehouse"
   }
 ];
 

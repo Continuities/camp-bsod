@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{+pageTitle}The White House - whitehouse.gov{/pageTitle}</title>
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+        <meta content="true" name="HandheldFriendly">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+        <link rel="stylesheet" type="text/css" href="common.css" />
+        <script type="text/javascript" defer="true" src="common.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-wrapper">the <span class="whitehouse">WHITE HOUSE</span></div>
+            <div class="header-navbar"></div>
+        </header>
+        {+ content /}
+        <footer>
+            <ul class="social">
+                <li class="twitter"></li>
+                <li class="instagram"></li>
+                <li class="facebook"></li>
+                <li class="comment"></li>
+            </ul>
+            <ul class="footer-nav">
+                <li>HOME</li>
+                <li>BRIEFING ROOM</li>
+                <li>ISSUES</li>
+                <li>THE ADMINISTRATION</li>
+                <li>PARTICIPATE</li>
+                <li>1600 PEN</li>
+            </ul>
+            <ul class="footer-links">
+                <li>USA.gov</li>
+                <li>Privacy Policy</li>
+                <li>Copyright Policy</li>
+            </ul>
+        </footer>
+    </body>
+</html>

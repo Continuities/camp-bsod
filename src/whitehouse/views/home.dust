@@ -1,0 +1,28 @@
+{>"base" /}
+{<content}
+    <img src="banner.png" class="banner">
+    <div class="quote">
+        “I said it's okay!”
+        <div class="pres">
+            - President Seth J. Hardy
+        </div>
+    </div>
+    {#stories}
+        <div class="panel{@eq key=$idx value=0} color-bar{/eq}">
+            {@eq key=$idx value=0}
+                <div class="sign-up">
+                    Sign Up to Receive Updates
+                    <div class="email">Email Address</div>
+                    <div class="sbs">
+                        <div class="zip">Zip Code</div>
+                        <div class="join btn">JOIN US</div>
+                    </div>
+                </div>
+            {/eq}
+            <img width="250" class="story-image" src="{image}">
+            {?title}<div class="title">{title}</div>{/title}
+            <div class="content">{content}</div>
+            <div class="btn">SEE MORE</div>
+        </div>
+    {/stories}
+{/content}
