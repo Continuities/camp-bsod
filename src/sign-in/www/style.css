@@ -4,11 +4,11 @@ html, body {
 }
 body {
     background: #001634;
-    color: #F2EB4D;
+    color: white;
 }
 header {
     background: url(header.jpg) top center no-repeat;
-    height: 120px;
+    background-size: cover;
     text-align: center;
     -webkit-box-shadow: inset 0px -120px 100px -70px rgba(0,22,52,1);
     -moz-box-shadow: inset 0px -120px 100px -70px rgba(0,22,52,1);
@@ -59,7 +59,7 @@ footer {
     padding: 0 20px;
     text-align: center;
     margin: 0 auto 40px;
-    background: #F2EB4D;
+    background: white;
     color: #001634;
     line-height: 50px;
     text-decoration: none;
