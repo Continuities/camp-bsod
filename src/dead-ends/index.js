@@ -15,7 +15,9 @@ var port = require('yargs').argv.port;
 const PAGES = [
     'bsod',
     'totenkitten',
-    'firefly'
+    'hyperborea',
+    'burnt'
+    //'firefly'
 ];
 
 function init(port) {
